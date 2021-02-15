@@ -1,5 +1,5 @@
 "use strict";
-
+//@ts-checks
 function Canvas2D_Singleton() {
     this._canvas = null;
     this._canvasContext = null;
@@ -112,6 +112,23 @@ Canvas2D_Singleton.prototype.drawText = function (text, position, origin, color,
     this._canvasContext.fillText(text, 0, 0);
     this._canvasContext.restore();
 };
-
+Canvas2D_Singleton.prototype.drawRect = function(color, pos0, pos1, pos2, pos3){
+    var canvasScale = this.scale;
+    this._canvasContext.save();
+    this._canvasContext.scale(canvasScale.x, canvasScale.y);
+    this._canvasContext.fillStyle = color.toString();
+    this._canvasContext.beginPath();
+    this._canvasContext.moveTo(pos0.x, pos0.y);
+    this._canvasContext.lineTo(pos1.x, pos1.y);
+    this._canvasContext.moveTo(pos1.x, pos1.y);
+    this._canvasContext.lineTo(pos2.x, pos2.y);
+    this._canvasContext.moveTo(pos2.x, pos2.y);
+    this._canvasContext.lineTo(pos3.x, pos3.y);
+    this._canvasContext.moveTo(pos3.x, pos3.y);
+    this._canvasContext.lineTo(pos0.x, pos0.y);
+    this._canvasContext.closePath();
+    this._canvasContext.stroke();
+    this._canvasContext.restore();
+};
 var Canvas2D = new Canvas2D_Singleton();
 

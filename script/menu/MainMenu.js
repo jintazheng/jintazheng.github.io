@@ -13,7 +13,7 @@ function generateMainMenuLabels(headerText){
             "100px"
         ),
         new Label(
-            "© 2018 Chen Shmilovich", 
+            "", 
             new Vector2(1250,700),
             Vector2.zero,
             "white",
@@ -92,7 +92,7 @@ function generateMainMenuButtons(inGame){
         sprites.backButton, 
         new Vector2(100,150),
         function(){
-            Game.mainMenu.labels = generateMainMenuLabels("Classic 8-Ball");
+            Game.mainMenu.labels = generateMainMenuLabels("Pool ball game");
             Game.mainMenu.buttons = generateMainMenuButtons(inGame);
         },
         sprites.backButtonHover
@@ -112,87 +112,6 @@ function generateMainMenuButtons(inGame){
                 sounds.fadeOut(Game.mainMenu.sound);
             },
             sprites.twoPlayersButtonHover
-        ),
-        new Button
-        (
-            // PLAYER vs COMPUTER
-            sprites.onePlayersButton, 
-            new Vector2(200,dev+400),
-            function(){
-                Game.mainMenu.labels = generateMainMenuLabels("Choose Difficulty");
-
-                Mouse.reset();
-                Game.mainMenu.buttons = [
-                    new Button
-                    (
-                        //EASY
-                        sprites.easyButton, 
-                        new Vector2(200,150),
-                        function(){
-                            AI_PLAYER_NUM = 1;
-                            AI_ON = true;
-                            TRAIN_ITER = 30;
-                            Game.mainMenu.active = false;
-                            GAME_STOPPED = false;
-                            setTimeout(Game.startNewGame,200);
-                            sounds.fadeOut(Game.mainMenu.sound);
-                        },
-                        sprites.easyButtonHover
-                    ),
-                    new Button
-                    (
-                        //MEDIUM
-                        sprites.mediumButton, 
-                        new Vector2(200,300),
-                        function(){
-                            AI_PLAYER_NUM = 1;
-                            AI_ON = true;
-                            TRAIN_ITER = 50;
-                            Game.mainMenu.active = false;
-                            GAME_STOPPED = false;
-                            setTimeout(Game.startNewGame,200);
-                            sounds.fadeOut(Game.mainMenu.sound);
-                        },
-                        sprites.mediumButtonHover
-                    ),
-                    new Button
-                    (
-                        //HARD
-                        sprites.hardButton, 
-                        new Vector2(200,450),
-                        function(){
-                            AI_PLAYER_NUM = 1;
-                            AI_ON = true;
-                            TRAIN_ITER = 100;
-                            Game.mainMenu.active = false;
-                            GAME_STOPPED = false;
-                            setTimeout(Game.startNewGame,200);
-                            sounds.fadeOut(Game.mainMenu.sound);
-                        },
-                        sprites.hardButtonHover
-                    ),
-                    new Button
-                    (
-                        //INSANE
-                        sprites.insaneButton, 
-                        new Vector2(200,600),
-                        function(){
-                            AI_PLAYER_NUM = 0;
-                            AI_ON = true;
-                            TRAIN_ITER = 700;
-                            Game.mainMenu.active = false;
-                            GAME_STOPPED = false;
-                            setTimeout(Game.startNewGame,200);
-                            sounds.fadeOut(Game.mainMenu.sound);
-                        },
-                        sprites.insaneButtonHover
-                    ),
-                    muteButton,
-                    backButton
-
-                ];
-            },
-            sprites.onePlayersButtonHover
         ),
         muteButton
     ]);

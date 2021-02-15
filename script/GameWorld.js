@@ -5,51 +5,35 @@ function GameWorld() {
     this.whiteBallStartingPosition = new Vector2(413,413);
 
     this.redBalls = [
-    new Ball(new Vector2(1056,433),Color.red),//3
-    new Ball(new Vector2(1090,374),Color.red),//4
-    new Ball(new Vector2(1126,393),Color.red),//8
-    new Ball(new Vector2(1126,472),Color.red),//10;
-    new Ball(new Vector2(1162,335),Color.red),//11
-    new Ball(new Vector2(1162,374),Color.red),//12
-    new Ball(new Vector2(1162,452),Color.red)//14
+    new Ball(new Vector2(500,433),Color.red)
     ]
 
     this.yellowBalls = [
-    new Ball(new Vector2(1022,413),Color.yellow),//1
-    new Ball(new Vector2(1056,393),Color.yellow),//2
-    new Ball(new Vector2(1090,452),Color.yellow),//6
-    new Ball(new Vector2(1126,354),Color.yellow),//7
-    new Ball(new Vector2(1126,433),Color.yellow),//9
-    new Ball(new Vector2(1162,413),Color.yellow),//13
-    new Ball(new Vector2(1162,491),Color.yellow)//15
+    new Ball(new Vector2(500,333),Color.yellow)
     ];
 
     this.whiteBall = new Ball(new Vector2(413,413),Color.white);
-    this.blackBall = new Ball(new Vector2(1090,413),Color.black);
 
     this.balls = [
     this.yellowBalls[0],
-    this.yellowBalls[1],
     this.redBalls[0],
-    this.redBalls[1],
-    this.blackBall,
-    this.yellowBalls[2],
-    this.yellowBalls[3],
-    this.redBalls[2],
-    this.yellowBalls[4],
-    this.redBalls[3],
-    this.redBalls[4],
-    this.redBalls[5],
-    this.yellowBalls[5],
-    this.redBalls[6],
-    this.yellowBalls[6],
-    this.whiteBall]
+    this.whiteBall];
 
     this.stick = new Stick({ x : 413, y : 413 });
 
     this.gameOver = false;
-}
 
+    this.borders = [
+        new Border(Color.red, new Vector2(
+             Game.size.x/2,
+             Game.size.y/2), 
+             (BORDER_SIZE), 
+             (BORDER_SIZE))];
+
+    //group
+    this.star2222group = new GroupStar2222(RADIUS, BORDER_SIZE, BORDER_SIZE);
+    //this.Mat = new Mat3();
+}
 GameWorld.prototype.getBallsSetByColor = function(color){
 
     if(color === Color.red){
@@ -201,7 +185,9 @@ GameWorld.prototype.draw = function () {
     for (var i = 0; i < this.balls.length; i++) {
         this.balls[i].draw();
     }
-
+    for(var i = 0; i < this.borders.length; i++){
+     this.borders[i].draw();
+    }
     this.stick.draw();
 };
 
@@ -227,7 +213,6 @@ GameWorld.prototype.initiateState = function(balls){
         this.balls[i].visible = balls[i].visible;
         this.balls[i].inHole = balls[i].inHole;
     }
-
     this.stick.position = this.whiteBall.position;
 }
 

@@ -16,17 +16,17 @@ function GamePolicy(){
     this.turnPlayed = false;
     this.validBallsInsertedOnTurn = 0;
 
-    this.leftBorderX = BORDER_SIZE;
-    this.rightBorderX = Game.size.x - BORDER_SIZE;
-    this.topBorderY = BORDER_SIZE;
-    this.bottomBorderY = Game.size.y - BORDER_SIZE;
+    this.leftBorderX = Game.size.x/2 - BORDER_SIZE/2;
+    this.rightBorderX = Game.size.x/2 + BORDER_SIZE/2;
+    this.topBorderY = Game.size.y/2 - BORDER_SIZE/2;
+    this.bottomBorderY = Game.size.y/2 + BORDER_SIZE/2;
 
-    this.topCenterHolePos = new Vector2(750,32);
-    this.bottomCenterHolePos = new Vector2(750,794);
-    this.topLeftHolePos = new Vector2(62,62);
-    this.topRightHolePos = new Vector2(1435,62);
-    this.bottomLeftHolePos = new Vector2(62,762)
-    this.bottomRightHolePos = new Vector2(1435,762);
+    this.topCenterHolePos = new Vector2(-1,-1);
+    this.bottomCenterHolePos = new Vector2(-1,-1);
+    this.topLeftHolePos = new Vector2(-1,-1);
+    this.topRightHolePos = new Vector2(-1,-1);
+    this.bottomLeftHolePos = new Vector2(-1,-1)
+    this.bottomRightHolePos = new Vector2(-1,-1);
 }
 
 GamePolicy.prototype.reset = function(){
@@ -43,12 +43,12 @@ GamePolicy.prototype.reset = function(){
     this.validBallsInsertedOnTurn = 0;
 }
 GamePolicy.prototype.drawScores = function(){
-    Canvas2D.drawText("PLAYER " + (this.turn+1), new Vector2(Game.size.x/2 + 40,200), new Vector2(150,0), "#096834", "top", "Impact", "70px");
-    this.players[0].totalScore.draw();
-    this.players[1].totalScore.draw();
+    //Canvas2D.drawText("PLAYER " + (this.turn+1), new Vector2(Game.size.x/2 + 40,200), new Vector2(150,0), "#096834", "top", "Impact", "70px");
+   // this.players[0].totalScore.draw();
+   // this.players[1].totalScore.draw();
 
-    this.players[0].matchScore.drawLines(this.players[0].color);
-    this.players[1].matchScore.drawLines(this.players[1].color);
+   // this.players[0].matchScore.drawLines(this.players[0].color);
+   // this.players[1].matchScore.drawLines(this.players[1].color);
 }
 
 GamePolicy.prototype.checkColisionValidity = function(ball1,ball2){

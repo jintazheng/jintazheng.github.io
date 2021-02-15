@@ -10,7 +10,10 @@
         $LAB
                 .script('script/system/Keys.js').wait()
                 .script('script/system/Color.js').wait()
+                .script('script/game_objects/Border.js').wait()
+                .script('script/geom/Mat3.js').wait()
                 .script('script/geom/Vector2.js').wait()
+                .script('script/geom/GroupStar2222.js').wait()
                 .script('script/input/ButtonState.js').wait()
                 .script('script/input/Keyboard.js').wait()
                 .script('script/input/Mouse.js').wait()
@@ -31,7 +34,7 @@
                 .script('script/GameWorld.js').wait()
                 .script('script/Game.js').wait()
                 .script('script/Assets.js').wait(function () {
-                    Game.start('gameArea','screen', 1500, 825);
+                    Game.start('gameArea','screen', 800, 800);
                 });
 
     </script>

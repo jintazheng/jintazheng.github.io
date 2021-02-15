@@ -16,7 +16,6 @@ function Game_Singleton() {
     this.spritesStillLoading = 0;
     this.gameWorld = undefined;
     this.sound = true;
-
     this.mainMenu = new Menu();
 }
 
@@ -38,7 +37,7 @@ Game_Singleton.prototype.initialize = function () {
 
 Game_Singleton.prototype.initMenus = function(inGame){
 
-    let labels = generateMainMenuLabels("Classic 8-Ball");
+    let labels = generateMainMenuLabels("Pool Ball Game");
 
     let buttons = generateMainMenuButtons(inGame);
 
@@ -50,7 +49,6 @@ Game_Singleton.prototype.initMenus = function(inGame){
         sounds.jazzTune
     );
 }
-
 Game_Singleton.prototype.loadSprite = function (imageName) {
     console.log("Loading sprite: " + imageName);
     var image = new Image();

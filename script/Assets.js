@@ -13,7 +13,7 @@ Game.loadAssets = function () {
     };
 
     sprites.mainMenuBackground = loadSprite("main_menu_background.png");
-    sprites.background = loadSprite("spr_background4.png");
+    sprites.background = loadSprite("spr_background3.png");
     sprites.ball = loadSprite("spr_ball2.png");
     sprites.redBall = loadSprite("spr_redBall2.png");
     sprites.yellowBall = loadSprite("spr_yellowBall2.png");
