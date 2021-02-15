@@ -22,10 +22,10 @@ function GroupStar2222(radius, w, h) {
     //all transform matrix
     this.group = new Array(this.tfdNum * 4);
     //for the rest translational fundamental domain
-    var g_i = 0;
-    for(var c = -radius; c <= radius; c++){
-        for(var r = 0;  r<= radius; r++){
-            var tfd_pos = new Vector2(c * 2 * w, r * 2 * h);
+    let g_i = 0;
+    for(let c = -radius; c <= radius; c++){
+        for(let r = 0;  r<= radius; r++){
+            let tfd_pos = new Vector2(c * 2 * w, r * 2 * h);
             this.group[g_i] = new Mat3();
             this.group[g_i] = this.tfd[0].TranslateWith(tfd_pos);
             g_i++;
@@ -40,5 +40,6 @@ function GroupStar2222(radius, w, h) {
             g_i++;
         }
     }
+      
     this.fdSize = this.tfdNum * 4;
 }
