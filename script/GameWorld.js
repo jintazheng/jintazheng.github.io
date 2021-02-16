@@ -2,31 +2,35 @@
 
 function GameWorld() {
 
-    this.whiteBallStartingPosition = new Vector2(413,413);
+    this.whiteBallStartingPosition = new Vector2(
+        Game.size.x/2,
+        Game.size.y - BORDER_SIZE/2);
 
     this.redBalls = [
-    new Ball(new Vector2(500,433),Color.red)
+    new Ball(new Vector2(300,633),Color.red)
     ]
 
     this.yellowBalls = [
-    new Ball(new Vector2(500,333),Color.yellow)
+    new Ball(new Vector2(500,633),Color.yellow)
     ];
 
-    this.whiteBall = new Ball(new Vector2(413,413),Color.white);
+    this.whiteBall = new Ball(new Vector2(
+        Game.size.x/2,
+        Game.size.y - BORDER_SIZE/2),Color.white);
 
     this.balls = [
     this.yellowBalls[0],
     this.redBalls[0],
     this.whiteBall];
 
-    this.stick = new Stick({ x : 413, y : 413 });
+    this.stick = new Stick({ x :  Game.size.x/2, y :  Game.size.y - BORDER_SIZE/2 });
 
     this.gameOver = false;
 
     this.borders = [
         new Border(Color.red, new Vector2(
              Game.size.x/2,
-             Game.size.y/2), 
+             Game.size.y - BORDER_SIZE/2), 
              (BORDER_SIZE), 
              (BORDER_SIZE))];
 

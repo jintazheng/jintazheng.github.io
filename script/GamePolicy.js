@@ -18,8 +18,8 @@ function GamePolicy(){
 
     this.leftBorderX = Game.size.x/2 - BORDER_SIZE/2;
     this.rightBorderX = Game.size.x/2 + BORDER_SIZE/2;
-    this.topBorderY = Game.size.y/2 - BORDER_SIZE/2;
-    this.bottomBorderY = Game.size.y/2 + BORDER_SIZE/2;
+    this.topBorderY = Game.size.y - BORDER_SIZE;
+    this.bottomBorderY = Game.size.y;
 
     this.topCenterHolePos = new Vector2(-1,-1);
     this.bottomCenterHolePos = new Vector2(-1,-1);
