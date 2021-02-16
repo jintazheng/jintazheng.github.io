@@ -42,7 +42,11 @@ Game.loadAssets = function () {
     sprites.aboutButton = loadSprite("about_button.png");
     sprites.aboutButtonHover = loadSprite("about_button_hover.png");
     sprites.controls = loadSprite("controls.png");
-
+    sprites.bar0 = loadSprite("bar0.png");
+    sprites.bar1 = loadSprite("bar1.png");
+    sprites.bar2 = loadSprite("bar2.png");
+    sprites.bar3 = loadSprite("bar3.png");
+    sprites.barv0 = loadSprite("barv0.png");
     sounds.side = loadSound("Side.wav");
     sounds.ballsCollide = loadSound("BallsCollide.wav");
     sounds.strike = loadSound("Strike.wav");

@@ -130,5 +130,29 @@ Canvas2D_Singleton.prototype.drawRect = function(color, pos0, pos1, pos2, pos3){
     this._canvasContext.stroke();
     this._canvasContext.restore();
 };
+Canvas2D_Singleton.prototype.drawRectImage = function(sprite, pos0, pos1, pos2, pos3){
+
+    var canvasScale = this.scale;
+    var scale = 1;
+    this._canvasContext.save();
+    this._canvasContext.scale(canvasScale.x, canvasScale.y);
+    //bar0
+    this._canvasContext.drawImage(sprite.bar0, 
+        pos0.x , pos0.y,
+        sprite.bar0.width * scale, sprite.bar0.height * scale);
+    //barv0
+    this._canvasContext.drawImage(sprite.barv0, 
+        pos1.x - sprite.barv0.width, pos1.y,
+        sprite.barv0.width * scale, sprite.barv0.height * scale);
+    //bar0
+    this._canvasContext.drawImage(sprite.bar0, 
+        pos3.x , pos3.y - sprite.bar0.height,
+       sprite.bar0.width * scale, sprite.bar0.height * scale);
+    //barv0
+    this._canvasContext.drawImage(sprite.barv0,
+        pos0.x, pos0.y,
+        sprite.barv0.width * scale, sprite.barv0.height * scale);
+    this._canvasContext.restore();
+};
 var Canvas2D = new Canvas2D_Singleton();
 

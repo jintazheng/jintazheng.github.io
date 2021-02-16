@@ -66,6 +66,7 @@ function GameWorld() {
             this.bordersGroup[i].pos1 = this.borders[0].pos0.add(this.star2222group.group[i].multiplyWithVec2(borderPos1));
             this.bordersGroup[i].pos2 = this.borders[0].pos0.add(this.star2222group.group[i].multiplyWithVec2(borderPos2));
             this.bordersGroup[i].pos3 = this.borders[0].pos0.add(this.star2222group.group[i].multiplyWithVec2(borderPos3));
+            this.bordersGroup[i].reorder();
         }
     }
 
