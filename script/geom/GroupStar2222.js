@@ -25,7 +25,7 @@ function GroupStar2222(radius, w, h) {
     let g_i = 0;
     for(let c = -radius; c <= radius; c++){
         for(let r = 0;  r<= radius; r++){
-            let tfd_pos = new Vector2(c * 2 * w, r * 2 * h);
+            let tfd_pos = new Vector2(c * 2 * w, - r * 2 * h);
             this.group[g_i] = new Mat3();
             this.group[g_i] = this.tfd[0].TranslateWith(tfd_pos);
             g_i++;

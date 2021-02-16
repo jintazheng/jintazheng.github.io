@@ -148,10 +148,13 @@ Ball.prototype.out = function(){
 	this.inHole = true;
 
 }
-
+Ball.prototype.setPosition = function(pos){
+    this.position = pos;
+}
 Ball.prototype.draw = function () {
     if(!this.visible)
         return;
 
 	Canvas2D.drawImage(this.sprite, this.position, 0, 1, new Vector2(25,25));
 };
+
