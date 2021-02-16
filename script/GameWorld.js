@@ -54,6 +54,21 @@ function GameWorld() {
             (BORDER_SIZE));
     }
     this.applyGroup = true;
+    //get the borders
+    // reflection ball
+    if (this.applyGroup) {
+        var borderPos0 = this.borders[0].pos0.subtract(this.borders[0].pos0);
+        var borderPos1 = this.borders[0].pos1.subtract(this.borders[0].pos0);
+        var borderPos2 = this.borders[0].pos2.subtract(this.borders[0].pos0);
+        var borderPos3 = this.borders[0].pos3.subtract(this.borders[0].pos0);
+        for (var i = 0; i < this.star2222group.group.length; i++) {
+            this.bordersGroup[i].pos0 = this.borders[0].pos0.add(this.star2222group.group[i].multiplyWithVec2(borderPos0));
+            this.bordersGroup[i].pos1 = this.borders[0].pos0.add(this.star2222group.group[i].multiplyWithVec2(borderPos1));
+            this.bordersGroup[i].pos2 = this.borders[0].pos0.add(this.star2222group.group[i].multiplyWithVec2(borderPos2));
+            this.bordersGroup[i].pos3 = this.borders[0].pos0.add(this.star2222group.group[i].multiplyWithVec2(borderPos3));
+        }
+    }
+
 }
 GameWorld.prototype.getBallsSetByColor = function (color) {
 
@@ -104,7 +119,6 @@ GameWorld.prototype.update = function (delta) {
             this.yellowBallGroup[i].setPosition(this.borders[0].pos0.add(this.star2222group.group[i].multiplyWithVec2(yellowPos)));
             this.redBallsGroup[i].setPosition(this.borders[0].pos0.add(this.star2222group.group[i].multiplyWithVec2(redPos)));
             this.whiteBallsGroup[i].setPosition(this.borders[0].pos0.add(this.star2222group.group[i].multiplyWithVec2(whitePos)));
-            
         }
     }
 
@@ -216,17 +230,18 @@ GameWorld.prototype.draw = function () {
     Canvas2D.drawImage(sprites.background);
     Game.policy.drawScores();
 
-    for (var i = 0; i < this.borders.length; i++) {
-        this.borders[i].draw();
-    }
     //draw group
     if (this.applyGroup) {
         for (var i = 0; i < this.star2222group.group.length; i++) {
+            this.bordersGroup[i].draw();
             this.yellowBallGroup[i].draw();
             this.redBallsGroup[i].draw();
             this.whiteBallsGroup[i].draw();
         }
     } else {
+        for (var i = 0; i < this.borders.length; i++) {
+            this.borders[i].draw();
+        }
         for (var i = 0; i < this.balls.length; i++) {
             this.balls[i].draw();
         }

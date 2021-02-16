@@ -26,7 +26,7 @@ Menu.prototype.load = function(){
         this.sound.volume = 0.8;
     }
 
-    this.sound.play();
+    //this.sound.play();
 }
 
 Menu.prototype.draw = function(){
