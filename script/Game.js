@@ -80,7 +80,9 @@ Game_Singleton.prototype.handleInput = function(){
 
 Game_Singleton.prototype.startNewGame = function(){
     Canvas2D._canvas.style.cursor = "auto";
-
+    KEYBOARD_INPUT_ON = true;
+    Keyboard.reset();
+    Mouse.reset();
     Game.gameWorld = new GameWorld();
     Game.policy = new GamePolicy();
 
@@ -94,13 +96,17 @@ Game_Singleton.prototype.startNewGame = function(){
     );
 
     setTimeout(()=>{
-        AI.init(Game.gameWorld, Game.policy);
-
-        if(AI_ON && AI_PLAYER_NUM == 0){
-            AI.startSession();
-        }
         Game.mainLoop();
     },5000);
+}
+Game_Singleton.prototype.restartGame = function(){
+    Canvas2D._canvas.style.cursor = "auto";
+    KEYBOARD_INPUT_ON = true;
+    Keyboard.reset();
+    Mouse.reset();
+    Game.gameWorld.reset();
+    Game.policy.reset();
+    Canvas2D.clear();
 }
 
 Game_Singleton.prototype.continueGame = function(){
@@ -111,7 +117,6 @@ Game_Singleton.prototype.continueGame = function(){
 
 Game_Singleton.prototype.mainLoop = function () {
     
-
     if(DISPLAY && !GAME_STOPPED){
         Game.gameWorld.handleInput(DELTA);
         Game.gameWorld.update(DELTA);

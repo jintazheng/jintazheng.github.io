@@ -13,12 +13,6 @@ function Stick(position){
 
 Stick.prototype.handleInput = function (delta) {
 
-    if(AI_ON && Game.policy.turn === AI_PLAYER_NUM)
-      return;
-
-    if(Game.policy.turnPlayed)
-      return;
-
     if(Keyboard.down(Keys.W) && KEYBOARD_INPUT_ON){
       if(this.power < 75){
         this.origin.x+=2;
@@ -37,11 +31,12 @@ Stick.prototype.handleInput = function (delta) {
       var strike = sounds.strike.cloneNode(true);
       strike.volume = (this.power/(10))<1?(this.power/(10)):1;
       strike.play();
-      Game.policy.turnPlayed = true;
       this.shooting = true;
       this.origin = this.shotOrigin.copy();
 
       Game.gameWorld.whiteBall.shoot(this.power, this.rotation);
+      KEYBOARD_INPUT_ON = false;
+      Game.policy.foul = true;
       var stick = this;
       setTimeout(function(){stick.visible = false;}, 500);
     }
@@ -61,7 +56,6 @@ Stick.prototype.shoot = function(power, rotation){
     strike.volume = (this.power/(10))<1?(this.power/(10)):1;
     strike.play();
   }
-  Game.policy.turnPlayed = true;
   this.shooting = true;
   this.origin = this.shotOrigin.copy();
 

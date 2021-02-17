@@ -1,30 +1,8 @@
 "use strict";
 
 function GameWorld() {
-
-    this.whiteBallStartingPosition = new Vector2(
-        Game.size.x / 2,
-        Game.size.y - BORDER_SIZE / 2);
-
-    this.redBalls = [
-        new Ball(new Vector2(450, 633), Color.red)
-    ]
-
-    this.yellowBalls = [
-        new Ball(new Vector2(400, 633), Color.yellow)
-    ];
-
-    this.whiteBall = new Ball(new Vector2(
-        Game.size.x / 2,
-        Game.size.y - BORDER_SIZE / 2), Color.white);
-
-    this.balls = [
-        this.yellowBalls[0],
-        this.redBalls[0],
-        this.whiteBall];
-
-    this.stick = new Stick({ x: Game.size.x / 2, y: Game.size.y - BORDER_SIZE / 2 });
-
+    this.resetGameWorld(); 
+    this.stick = new Stick({ x:  this.whiteBall.position.x, y: this.whiteBall.position.y });
     this.gameOver = false;
 
     this.borders = [
@@ -53,7 +31,7 @@ function GameWorld() {
             (BORDER_SIZE),
             (BORDER_SIZE));
     }
-    this.applyGroup = true;
+    this.applyGroup = false;
     //get the borders
     // reflection ball
     if (this.applyGroup) {
@@ -71,6 +49,25 @@ function GameWorld() {
     }
 
 }
+GameWorld.prototype.resetGameWorld = function () {
+    this.redBalls = [
+        new Ball(new Vector2(Game.size.x / 2 + BORDER_SIZE / 3, Game.size.y - BORDER_SIZE / 2), Color.red)
+    ]
+
+    this.yellowBalls = [
+        new Ball(new Vector2(Game.size.x / 2 - BORDER_SIZE / 9, Game.size.y - BORDER_SIZE / 2), Color.yellow)
+    ];
+
+    this.whiteBall = new Ball(new Vector2(
+        Game.size.x / 2 - BORDER_SIZE / 3,
+        Game.size.y - BORDER_SIZE / 2), Color.white);
+
+    this.balls = [
+        this.yellowBalls[0],
+        this.redBalls[0],
+        this.whiteBall];
+    //this.stick.reset();     
+};
 GameWorld.prototype.getBallsSetByColor = function (color) {
 
     if (color === Color.red) {
@@ -85,14 +82,13 @@ GameWorld.prototype.getBallsSetByColor = function (color) {
     if (color === Color.black) {
         return this.blackBall;
     }
-}
+};
 
 GameWorld.prototype.handleInput = function (delta) {
     this.stick.handleInput(delta);
 };
 
 GameWorld.prototype.update = function (delta) {
-    this.stick.update(delta);
 
     for (var i = 0; i < this.balls.length; i++) {
         for (var j = i + 1; j < this.balls.length; j++) {
@@ -103,11 +99,10 @@ GameWorld.prototype.update = function (delta) {
     for (var i = 0; i < this.balls.length; i++) {
         this.balls[i].update(delta);
     }
-
-    if (!this.ballsMoving() && AI.finishedSession) {
-        Game.policy.updateTurnOutcome();
+    this.stick.update(delta);
+    if (!this.ballsMoving()) {
         if (Game.policy.foul) {
-            this.ballInHand();
+            Game.restartGame();
         }
     }
 
@@ -124,35 +119,6 @@ GameWorld.prototype.update = function (delta) {
     }
 
 };
-
-GameWorld.prototype.ballInHand = function () {
-    if (AI_ON && Game.policy.turn === AI_PLAYER_NUM) {
-        return;
-    }
-
-    KEYBOARD_INPUT_ON = false;
-    this.stick.visible = false;
-    if (!Mouse.left.down) {
-        this.whiteBall.position = Mouse.position;
-    }
-    else {
-        let ballsOverlap = this.whiteBallOverlapsBalls();
-
-        if (!Game.policy.isOutsideBorder(Mouse.position, this.whiteBall.origin) &&
-            !Game.policy.isInsideHole(Mouse.position) &&
-            !ballsOverlap) {
-            KEYBOARD_INPUT_ON = true;
-            Keyboard.reset();
-            Mouse.reset();
-            this.whiteBall.position = Mouse.position;
-            this.whiteBall.inHole = false;
-            Game.policy.foul = false;
-            this.stick.position = this.whiteBall.position;
-            this.stick.visible = true;
-        }
-    }
-
-}
 
 GameWorld.prototype.whiteBallOverlapsBalls = function () {
 
@@ -182,9 +148,6 @@ GameWorld.prototype.ballsMoving = function () {
 }
 
 GameWorld.prototype.handleCollision = function (ball1, ball2, delta) {
-
-    if (ball1.inHole || ball2.inHole)
-        return;
 
     if (!ball1.moving && !ball2.moving)
         return;
@@ -230,7 +193,6 @@ GameWorld.prototype.handleCollision = function (ball1, ball2, delta) {
 GameWorld.prototype.draw = function () {
     Canvas2D.drawImage(sprites.background);
     Game.policy.drawScores();
-
     //draw group
     if (this.applyGroup) {
         for (var i = 0; i < this.star2222group.group.length; i++) {
@@ -247,8 +209,13 @@ GameWorld.prototype.draw = function () {
             this.balls[i].draw();
         }
     }
-
     this.stick.draw();
+    //draw hint
+    if (!this.ballsMoving()) {
+        Canvas2D.drawLine(Color.white, this.whiteBall.position, Mouse._position);
+        Canvas2D.drawCircle(Color.white, Mouse._position, BALL_SIZE / 2);
+    }
+    Game.policy.drawOver();
 };
 
 GameWorld.prototype.reset = function () {

@@ -9,6 +9,7 @@ function Ball(initPos,color){
     this.moving = false;
     this.visible = true;
     this.inHole = false;
+    this.lastCollision = false;
 }
 
 Object.defineProperty(Ball.prototype, "color",
@@ -70,25 +71,10 @@ Ball.prototype.update = function(delta){
 
 Ball.prototype.updatePosition = function(delta){
 
-    if(!this.moving || this.inHole)
+    if(!this.moving )
         return;
     var ball = this;
     var newPos = this.position.add(this.velocity.multiply(delta));
-
-
-	if(Game.policy.isInsideHole(newPos)){
-        if(Game.sound && SOUND_ON){
-            var holeSound = sounds.hole.cloneNode(true);
-            holeSound.volume = 0.5;
-            holeSound.play();
-        }
-		this.position = newPos;
-        this.inHole = true;
-        setTimeout(function(){ball.visible=false;ball.velocity = Vector2.zero;}, 100);
-        Game.policy.handleBallInHole(this);
-		return;
-	}
-
     var collision = this.handleCollision(newPos);
 
     if(collision){
@@ -123,7 +109,10 @@ Ball.prototype.handleCollision = function(newPos){
         this.position.y = Game.policy.bottomBorderY - this.origin.y;
         collision = true;
     }
-
+    if(collision && this.color == Color.white && !this.lastCollision){
+        Game.policy.countHittingBorderTimes();
+    }
+    this.lastCollision = collision;
     return collision;
 }
 
@@ -139,6 +128,7 @@ Ball.prototype.reset = function(){
 	this.velocity = Vector2.zero;
 	this.position = this.initPos;
 	this.visible = true;
+    this.lastCollision = false;
 }
 
 Ball.prototype.out = function(){
