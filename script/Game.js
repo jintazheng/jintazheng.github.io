@@ -95,12 +95,12 @@ Game_Singleton.prototype.startNewGame = function(){
         new Vector2(sprites.controls.width/2,sprites.controls.height/2)
     );
 
-    setTimeout(()=>{
-        Game.mainLoop();
-    },10);
-    // setTimeout(()=>{
-    //     Game.mainLoop();
-    // },5000);
+   // setTimeout(()=>{
+    //    Game.mainLoop();
+   // },10);
+     setTimeout(()=>{
+         Game.mainLoop();
+     },5000);
 }
 Game_Singleton.prototype.restartGame = function(){
     Canvas2D._canvas.style.cursor = "auto";
