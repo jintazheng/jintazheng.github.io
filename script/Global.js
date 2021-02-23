@@ -2,6 +2,7 @@ const LOG = false;
 
 const BALL_SIZE = 38;
 const BORDER_SIZE = 300;
+const BORDER_SIZE_333 = 400;
 const HOLE_RADIUS = 0;
 
 //group

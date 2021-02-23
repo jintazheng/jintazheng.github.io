@@ -1,71 +1,103 @@
 "use strict";
 
 function GameWorld() {
-    this.resetGameWorld(); 
-    this.stick = new Stick({ x:  this.whiteBall.position.x, y: this.whiteBall.position.y });
+    //0 is star2222, and 1 is star333
+    this.groupType = 0;
+    this.applyGroup = true;
+    this.resetGameWorld();
+    this.stick = new Stick({ x: this.whiteBall.position.x, y: this.whiteBall.position.y });
     this.gameOver = false;
 
-    this.borders = [
-        new Border(Color.red, new Vector2(
-            Game.size.x / 2,
-            Game.size.y - BORDER_SIZE / 2),
-            (BORDER_SIZE),
-            (BORDER_SIZE))];
+    if (0 == this.groupType) {
+        this.borders = [
+            new Border(Color.red, new Vector2(
+                Game.size.x / 2,
+                Game.size.y - BORDER_SIZE / 2),
+                (BORDER_SIZE),
+                (BORDER_SIZE))];
+        //group
+        this.star2222group = new GroupStar2222(RADIUS, BORDER_SIZE, BORDER_SIZE);
+        this.yellowBallGroup = new Array(this.star2222group.group.length);
+        this.redBallsGroup = new Array(this.star2222group.group.length);
+        this.whiteBallsGroup = new Array(this.star2222group.group.length);
+        this.bordersGroup = new Array(this.star2222group.group.length);
 
-    //group
-    this.star2222group = new GroupStar2222(RADIUS, BORDER_SIZE, BORDER_SIZE);
-    this.yellowBallGroup = new Array(this.star2222group.group.length);
-    this.redBallsGroup = new Array(this.star2222group.group.length);
-    this.whiteBallsGroup = new Array(this.star2222group.group.length);
-    this.bordersGroup = new Array(this.star2222group.group.length);
-
-    for (let i = 0; i < this.star2222group.group.length; i++) {
-        this.yellowBallGroup[i] = new Ball(new Vector2(500, 633), Color.yellow);
-        this.redBallsGroup[i] = new Ball(new Vector2(300, 633), Color.red);
-        this.whiteBallsGroup[i] = new Ball(new Vector2(
-            Game.size.x / 2,
-            Game.size.y - BORDER_SIZE / 2), Color.white);
-        this.bordersGroup[i] = new Border(Color.red, new Vector2(
-            Game.size.x / 2,
-            Game.size.y - BORDER_SIZE / 2),
-            (BORDER_SIZE),
-            (BORDER_SIZE));
-    }
-    this.applyGroup = false;
-    //get the borders
-    // reflection ball
-    if (this.applyGroup) {
-        var borderPos0 = this.borders[0].pos0.subtract(this.borders[0].pos0);
-        var borderPos1 = this.borders[0].pos1.subtract(this.borders[0].pos0);
-        var borderPos2 = this.borders[0].pos2.subtract(this.borders[0].pos0);
-        var borderPos3 = this.borders[0].pos3.subtract(this.borders[0].pos0);
-        for (var i = 0; i < this.star2222group.group.length; i++) {
-            this.bordersGroup[i].pos0 = this.borders[0].pos0.add(this.star2222group.group[i].multiplyWithVec2(borderPos0));
-            this.bordersGroup[i].pos1 = this.borders[0].pos0.add(this.star2222group.group[i].multiplyWithVec2(borderPos1));
-            this.bordersGroup[i].pos2 = this.borders[0].pos0.add(this.star2222group.group[i].multiplyWithVec2(borderPos2));
-            this.bordersGroup[i].pos3 = this.borders[0].pos0.add(this.star2222group.group[i].multiplyWithVec2(borderPos3));
-            this.bordersGroup[i].reorder();
+        for (let i = 0; i < this.star2222group.group.length; i++) {
+            this.yellowBallGroup[i] = new Ball(new Vector2(500, 633), Color.yellow);
+            this.redBallsGroup[i] = new Ball(new Vector2(300, 633), Color.red);
+            this.whiteBallsGroup[i] = new Ball(new Vector2(
+                Game.size.x / 2,
+                Game.size.y - BORDER_SIZE / 2), Color.white);
+            this.bordersGroup[i] = new Border(Color.red, new Vector2(
+                Game.size.x / 2,
+                Game.size.y - BORDER_SIZE / 2),
+                (BORDER_SIZE),
+                (BORDER_SIZE));
+        }
+        //get the borders
+        // reflection ball
+        if (this.applyGroup) {
+            var borderPos0 = this.borders[0].pos0.subtract(this.borders[0].pos0);
+            var borderPos1 = this.borders[0].pos1.subtract(this.borders[0].pos0);
+            var borderPos2 = this.borders[0].pos2.subtract(this.borders[0].pos0);
+            var borderPos3 = this.borders[0].pos3.subtract(this.borders[0].pos0);
+            for (var i = 0; i < this.star2222group.group.length; i++) {
+                this.bordersGroup[i].pos0 = this.borders[0].pos0.add(this.star2222group.group[i].multiplyWithVec2(borderPos0));
+                this.bordersGroup[i].pos1 = this.borders[0].pos0.add(this.star2222group.group[i].multiplyWithVec2(borderPos1));
+                this.bordersGroup[i].pos2 = this.borders[0].pos0.add(this.star2222group.group[i].multiplyWithVec2(borderPos2));
+                this.bordersGroup[i].pos3 = this.borders[0].pos0.add(this.star2222group.group[i].multiplyWithVec2(borderPos3));
+                this.bordersGroup[i].reorder();
+            }
+        }
+    } else if (1 == this.groupType) {
+        this.borders = [
+            new PolyBorder(Color.red, 3)];
+        this.borders[0].pos[0] = new Vector2(
+            Game.size.x / 2 - BORDER_SIZE_333 / 2,
+            Game.size.y - Math.sqrt(3) / 2 * BORDER_SIZE_333);
+        this.borders[0].pos[1] = new Vector2(
+            Game.size.x / 2 + BORDER_SIZE_333 / 2,
+            Game.size.y - Math.sqrt(3) / 2 * BORDER_SIZE_333);
+        this.borders[0].pos[2] = new Vector2(
+                Game.size.x / 2,
+                Game.size.y - Math.sqrt(3) / 2 * BORDER_SIZE_333 - Math.sqrt(3) / 2 * BORDER_SIZE_333);
+        //333 group
+        this.star333group = new GroupStar333(BORDER_SIZE_333);
+        this.yellowBallGroup = new Array(this.star333group.group.length);
+        this.redBallsGroup = new Array(this.star333group.group.length);
+        this.whiteBallsGroup = new Array(this.star333group.group.length);
+        this.bordersGroup = new Array(this.star333group.group.length);
+        for (let i = 0; i < this.star333group.group.length; i++) {
+            this.yellowBallGroup[i] = new Ball(new Vector2(500, 633), Color.yellow);
+            this.redBallsGroup[i] = new Ball(new Vector2(300, 633), Color.red);
+            this.whiteBallsGroup[i] = new Ball(new Vector2( Game.size.x / 2,Game.size.y - BORDER_SIZE_333 / 2), Color.white);
+            this.bordersGroup[i] = new PolyBorder(Color.red, 3);
+        }
+        //get the borders
+        // reflection ball
+        if (this.applyGroup) {
+            var borderPos0 = this.borders[0].pos[0].subtract(this.borders[0].pos[0]);
+            var borderPos1 = this.borders[0].pos[1].subtract(this.borders[0].pos[0]);
+            var borderPos2 = this.borders[0].pos[2].subtract(this.borders[0].pos[0]);
+            for (var i = 0; i < this.star333group.group.length; i++) {
+                this.bordersGroup[i].pos[0] = this.borders[0].pos[0].add(this.star333group.group[i].multiplyWithVec2(borderPos0));
+                this.bordersGroup[i].pos[1] = this.borders[0].pos[0].add(this.star333group.group[i].multiplyWithVec2(borderPos1));
+                this.bordersGroup[i].pos[2] = this.borders[0].pos[0].add(this.star333group.group[i].multiplyWithVec2(borderPos2));
+            }
         }
     }
-
 }
 GameWorld.prototype.resetGameWorld = function () {
-    this.redBalls = [
-        new Ball(new Vector2(Game.size.x / 2 + BORDER_SIZE / 3, Game.size.y - BORDER_SIZE / 2), Color.red)
-    ]
-
-    this.yellowBalls = [
-        new Ball(new Vector2(Game.size.x / 2 - BORDER_SIZE / 9, Game.size.y - BORDER_SIZE / 2), Color.yellow)
-    ];
-
-    this.whiteBall = new Ball(new Vector2(
-        Game.size.x / 2 - BORDER_SIZE / 3,
-        Game.size.y - BORDER_SIZE / 2), Color.white);
-
-    this.balls = [
-        this.yellowBalls[0],
-        this.redBalls[0],
-        this.whiteBall];
+    if (0 == this.groupType) {
+        this.redBalls = [new Ball(new Vector2(Game.size.x / 2 + BORDER_SIZE / 3, Game.size.y - BORDER_SIZE / 4), Color.red)]
+        this.yellowBalls = [new Ball(new Vector2(Game.size.x / 2 - BORDER_SIZE / 9, Game.size.y - BORDER_SIZE / 4), Color.yellow)];
+        this.whiteBall = new Ball(new Vector2(Game.size.x / 2 - BORDER_SIZE / 3, Game.size.y - BORDER_SIZE / 4), Color.white);
+    } else if (1 == this.groupType) {
+        this.redBalls = [new Ball(new Vector2(Game.size.x / 2 + BORDER_SIZE_333 / 5, Game.size.y - BORDER_SIZE_333 / 3  - Math.sqrt(3) / 2 * BORDER_SIZE_333), Color.red)]
+        this.yellowBalls = [new Ball(new Vector2(Game.size.x / 2 , Game.size.y - BORDER_SIZE_333 / 3 - Math.sqrt(3) / 2 * BORDER_SIZE_333), Color.yellow)];
+        this.whiteBall = new Ball(new Vector2(Game.size.x / 2 - BORDER_SIZE_333 / 5, Game.size.y - BORDER_SIZE_333 / 3 - Math.sqrt(3) / 2 * BORDER_SIZE_333), Color.white);
+    }
+    this.balls = [this.yellowBalls[0], this.redBalls[0], this.whiteBall];
     //this.stick.reset();     
 };
 GameWorld.prototype.getBallsSetByColor = function (color) {
@@ -105,16 +137,29 @@ GameWorld.prototype.update = function (delta) {
             Game.restartGame();
         }
     }
-
-    // reflection ball
-    if (this.applyGroup) {
-        var yellowPos = this.yellowBalls[0].position.subtract(this.borders[0].pos0);
-        var redPos = this.redBalls[0].position.subtract(this.borders[0].pos0);
-        var whitePos = this.whiteBall.position.subtract(this.borders[0].pos0);
-        for (var i = 0; i < this.star2222group.group.length; i++) {
-            this.yellowBallGroup[i].setPosition(this.borders[0].pos0.add(this.star2222group.group[i].multiplyWithVec2(yellowPos)));
-            this.redBallsGroup[i].setPosition(this.borders[0].pos0.add(this.star2222group.group[i].multiplyWithVec2(redPos)));
-            this.whiteBallsGroup[i].setPosition(this.borders[0].pos0.add(this.star2222group.group[i].multiplyWithVec2(whitePos)));
+    if (0 == this.groupType) {
+        // reflection ball
+        if (this.applyGroup) {
+            var yellowPos = this.yellowBalls[0].position.subtract(this.borders[0].pos0);
+            var redPos = this.redBalls[0].position.subtract(this.borders[0].pos0);
+            var whitePos = this.whiteBall.position.subtract(this.borders[0].pos0);
+            for (var i = 0; i < this.star2222group.group.length; i++) {
+                this.yellowBallGroup[i].setPosition(this.borders[0].pos0.add(this.star2222group.group[i].multiplyWithVec2(yellowPos)));
+                this.redBallsGroup[i].setPosition(this.borders[0].pos0.add(this.star2222group.group[i].multiplyWithVec2(redPos)));
+                this.whiteBallsGroup[i].setPosition(this.borders[0].pos0.add(this.star2222group.group[i].multiplyWithVec2(whitePos)));
+            }
+        }
+    } else if (1 == this.groupType) {
+        // reflection ball
+        if (this.applyGroup) {
+            var yellowPos = this.yellowBalls[0].position.subtract(this.borders[0].pos[0]);
+            var redPos = this.redBalls[0].position.subtract(this.borders[0].pos[0]);
+            var whitePos = this.whiteBall.position.subtract(this.borders[0].pos[0]);
+            for (var i = 0; i < this.star333group.group.length; i++) {
+                this.yellowBallGroup[i].setPosition(this.borders[0].pos[0].add(this.star333group.group[i].multiplyWithVec2(yellowPos)));
+                this.redBallsGroup[i].setPosition(this.borders[0].pos[0].add(this.star333group.group[i].multiplyWithVec2(redPos)));
+                this.whiteBallsGroup[i].setPosition(this.borders[0].pos[0].add(this.star333group.group[i].multiplyWithVec2(whitePos)));
+            }
         }
     }
 
@@ -192,23 +237,44 @@ GameWorld.prototype.handleCollision = function (ball1, ball2, delta) {
 
 GameWorld.prototype.draw = function () {
     Canvas2D.drawImage(sprites.background);
-    Game.policy.drawScores();
-    //draw group
-    if (this.applyGroup) {
-        for (var i = 0; i < this.star2222group.group.length; i++) {
-            this.bordersGroup[i].draw();
-            this.yellowBallGroup[i].draw();
-            this.redBallsGroup[i].draw();
-            this.whiteBallsGroup[i].draw();
+    
+    if (0 == this.groupType) {
+        //draw group
+        if (this.applyGroup) {
+            for (var i = 0; i < this.star2222group.group.length; i++) {
+                this.bordersGroup[i].draw();
+                this.yellowBallGroup[i].draw();
+                this.redBallsGroup[i].draw();
+                this.whiteBallsGroup[i].draw();
+            }
+        } else {
+            for (var i = 0; i < this.borders.length; i++) {
+                this.borders[i].draw();
+            }
+            for (var i = 0; i < this.balls.length; i++) {
+                this.balls[i].draw();
+            }
         }
-    } else {
-        for (var i = 0; i < this.borders.length; i++) {
-            this.borders[i].draw();
-        }
-        for (var i = 0; i < this.balls.length; i++) {
-            this.balls[i].draw();
+    } else if (1 == this.groupType) {
+        //
+        if (this.applyGroup) {
+            //
+            for (var i = 0; i < this.star333group.group.length; i++) {
+                this.bordersGroup[i].draw();
+                this.yellowBallGroup[i].draw();
+                this.redBallsGroup[i].draw();
+                this.whiteBallsGroup[i].draw();
+            }
+        } else {
+            for (var i = 0; i < this.borders.length; i++) {
+                this.borders[i].draw();
+            }
+            for (var i = 0; i < this.balls.length; i++) {
+                this.balls[i].draw();
+            }
         }
     }
+    Game.policy.drawScores();
     this.stick.draw();
     //draw hint
     if (!this.ballsMoving()) {

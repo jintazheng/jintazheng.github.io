@@ -48,5 +48,20 @@ Mat3.prototype.multiplyWithMat = function (m1) {
    m0.m[0] = -1.0;
    return m0;
 };
-
+Mat3.prototype.makeDihedralGroupR = function(k, n){
+   let m0 = new Mat3();
+   m0.m[0] = Math.cos(2 * Math.PI * k / n);
+   m0.m[1] = Math.sin(2 * Math.PI * k / n);
+   m0.m[3] = -Math.sin(2 * Math.PI * k / n);
+   m0.m[4] = Math.cos(2 * Math.PI * k / n);
+   return m0;
+};
+Mat3.prototype.makeDihedralGroupS = function(k, n){
+   let m0 = new Mat3();
+   m0.m[0] = Math.cos(2 * Math.PI * k / n);
+   m0.m[1] = Math.sin(2 * Math.PI * k / n);
+   m0.m[3] = Math.sin(2 * Math.PI * k / n);
+   m0.m[4] = -Math.cos(2 * Math.PI * k / n);
+   return m0;
+};
 

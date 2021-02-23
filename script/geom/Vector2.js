@@ -88,7 +88,9 @@ Vector2.prototype.multiplyWith = function (v) {
     }
     return this;
 };
-
+Vector2.prototype.dot = function (v) {
+    return (this.x * v.x + this.y * v.y);
+};
 Vector2.prototype.multiply = function (v) {
     var result = this.copy();
     return result.multiplyWith(v);
@@ -116,3 +118,9 @@ Vector2.prototype.equals = function (obj) {
 Vector2.prototype.distanceFrom = function(obj){
     return Math.sqrt((this.x-obj.x)*(this.x-obj.x) + (this.y-obj.y)*(this.y-obj.y));
 }
+Vector2.prototype.det = function (obj) {
+    return this.x * obj.y - this.y * obj.x;
+};
+Vector2.prototype.len = function () {
+    return Math.sqrt(this.x * this.x + this.y * this.y);
+};

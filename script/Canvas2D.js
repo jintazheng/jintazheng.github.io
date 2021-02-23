@@ -130,6 +130,45 @@ Canvas2D_Singleton.prototype.drawRect = function (color, pos0, pos1, pos2, pos3)
     this._canvasContext.stroke();
     this._canvasContext.restore();
 };
+Canvas2D_Singleton.prototype.drawPoly = function (color, pos) {
+    var canvasScale = this.scale;
+    this._canvasContext.save();
+    this._canvasContext.scale(canvasScale.x, canvasScale.y);
+    this._canvasContext.strokeStyle = color.toString();
+    this._canvasContext.beginPath();
+    for (let p = 0; p < pos.length; p++) {
+        this._canvasContext.moveTo(pos[p].x, pos[p].y);
+        this._canvasContext.lineTo(pos[(p + 1) % (pos.length)].x, pos[(p + 1) % (pos.length)].y);
+    }
+    this._canvasContext.closePath();
+    this._canvasContext.stroke();
+    this._canvasContext.restore();
+};
+Canvas2D_Singleton.prototype.drawPolyWithImage = function (sprite, pos) {
+    for (let p = 0; p < pos.length; p++) {
+        var canvasScale = this.scale;
+        this._canvasContext.save();
+        this._canvasContext.scale(canvasScale.x, canvasScale.y);
+        let pos0 = new Vector2(pos[p].x, pos[p].y);
+        let pos1 = new Vector2(pos[(p + 1) % (pos.length)].x, pos[(p + 1) % (pos.length)].y);
+        let cosr = pos1.subtract(pos0);
+        cosr.normalize();
+        let horizontal_v = new Vector2(1.0, 0.0);
+        let costheta = cosr.dot(horizontal_v); 
+        let rotation = Math.acos(costheta);
+        this._canvasContext.translate(pos0.x, pos0.y - sprite.bar333.height);
+        let sign_r = 1;
+        if(pos1.y > pos0.y)
+            sign_r = -1;
+        this._canvasContext.rotate(-rotation * sign_r);
+        this._canvasContext.translate(-pos0.x, -(pos0.y - sprite.bar333.height));
+        this._canvasContext.drawImage(sprite.bar333,
+            pos0.x, pos0.y - sprite.bar333.height,
+            sprite.bar333.width , sprite.bar333.height );
+        this._canvasContext.restore();
+    }
+};
+
 Canvas2D_Singleton.prototype.drawLine = function (color, pos0, pos1) {
     var canvasScale = this.scale;
     this._canvasContext.save();

@@ -97,7 +97,10 @@ Game_Singleton.prototype.startNewGame = function(){
 
     setTimeout(()=>{
         Game.mainLoop();
-    },5000);
+    },10);
+    // setTimeout(()=>{
+    //     Game.mainLoop();
+    // },5000);
 }
 Game_Singleton.prototype.restartGame = function(){
     Canvas2D._canvas.style.cursor = "auto";

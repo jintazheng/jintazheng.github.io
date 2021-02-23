@@ -46,6 +46,7 @@ Game.loadAssets = function () {
     sprites.bar1 = loadSprite("bar1.png");
     sprites.bar2 = loadSprite("bar2.png");
     sprites.bar3 = loadSprite("bar3.png");
+    sprites.bar333 = loadSprite("bar333.png");
     sprites.barv0 = loadSprite("barv0.png");
     sounds.side = loadSound("Side.wav");
     sounds.ballsCollide = loadSound("BallsCollide.wav");

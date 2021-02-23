@@ -75,6 +75,42 @@ GamePolicy.prototype.isOutsideBorder = function(pos,origin){
     return this.isXOutsideLeftBorder(pos,origin) || this.isXOutsideRightBorder(pos,origin) || 
     this.isYOutsideTopBorder(pos, origin) || this.isYOutsideBottomBorder(pos , origin);
 }
+//this is only working for the triangle case
+GamePolicy.prototype.isOutsidePolyBorder = function(pos, origin){
+    var pos0 = Game.gameWorld.borders[0].pos[0].copy();
+    var pos1 = Game.gameWorld.borders[0].pos[1].copy();
+    var pos2 = Game.gameWorld.borders[0].pos[2].copy();
+    //remove the size of ball
+    pos0.x = pos0.x + origin.y * Math.sqrt(3); 
+    pos0.y = pos0.y - origin.y; 
+    //
+    pos1.x = pos1.x - origin.y * Math.sqrt(3); 
+    pos1.y = pos1.y - origin.y;
+    //
+    pos2.x = pos2.x; 
+    pos2.y = pos2.y + origin.y * 2;
+    //
+    var v = pos;
+    var v0 = pos0;
+    var v1 = pos1.subtract(pos0);
+    var v2 = pos2.subtract(pos0);
+    var a = (v.det(v2) - v0.det(v2)) / v1.det(v2);
+    var b = -(v.det(v1) - v0.det(v1))/ v1.det(v2);
+    //-1 is no solution, 
+    //0 is out of edge (pos0, pos1), 
+    //1 is out of edge (pos1, pos2)
+    //2 is out of edge (pos2, pos0)
+    if(a > 0 && b > 0 && ((a + b) < 1)){
+        return -1;
+    }
+    else if(b <= 0){
+        return 0;
+    }else if(a <= 0){
+        return 2;
+    }else{
+        return 1;
+    }
+}
 GamePolicy.prototype.countHittingBorderTimes = function(){
     if(!this.whiteHitRed){
         this.hitBorderTimes= this.hitBorderTimes + 1;
