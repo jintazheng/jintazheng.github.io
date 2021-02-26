@@ -23,7 +23,7 @@ Stick.prototype.handleInput = function (delta) {
     if(Keyboard.down(Keys.S) && KEYBOARD_INPUT_ON){
       if(this.power>0){
         this.origin.x-=2;
-        this.power-=1.2;
+        this.power-=0.8;
       }
     }
 
