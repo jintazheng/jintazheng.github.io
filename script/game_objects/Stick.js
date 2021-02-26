@@ -7,27 +7,13 @@ function Stick(position){
     this.shooting = false;
     this.visible = true;
     this.rotation = 0;
-    this.power = 0;
+    this.power = 12;
     this.trackMouse = true;
 }
 
 Stick.prototype.handleInput = function (delta) {
 
-    if(Keyboard.down(Keys.W) && KEYBOARD_INPUT_ON){
-      if(this.power < 20){
-        this.origin.x+=2;
-        this.power+=0.8;
-      }
-    }
-
-    if(Keyboard.down(Keys.S) && KEYBOARD_INPUT_ON){
-      if(this.power>0){
-        this.origin.x-=2;
-        this.power-=0.8;
-      }
-    }
-
-    else if (this.power>0 && Mouse.left.down){
+    if (this.power>0 && Mouse.left.down){
       var strike = sounds.strike.cloneNode(true);
       strike.volume = (this.power/(10))<1?(this.power/(10)):1;
       strike.play();
@@ -75,7 +61,7 @@ Stick.prototype.reset = function(){
 	this.origin = new Vector2(970,11);
   this.shooting = false;
   this.visible = true;
-	this.power = 0;
+	this.power = 12;
 };
 
 Stick.prototype.draw = function () {
