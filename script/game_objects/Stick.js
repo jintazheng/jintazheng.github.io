@@ -16,7 +16,7 @@ Stick.prototype.handleInput = function (delta) {
     if(Keyboard.down(Keys.W) && KEYBOARD_INPUT_ON){
       if(this.power < 20){
         this.origin.x+=2;
-        this.power+=1.2;
+        this.power+=0.8;
       }
     }
 

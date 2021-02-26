@@ -2,7 +2,7 @@
 
 function GameWorld() {
     //0 is star2222, and 1 is star333
-    this.groupType = 0;
+    this.groupType = 1;
     this.applyGroup = true;
     this.resetGameWorld();
     this.stick = new Stick({ x: this.whiteBall.position.x, y: this.whiteBall.position.y });
