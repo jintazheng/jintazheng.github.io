@@ -41,6 +41,13 @@ Game_Singleton.prototype.initialize = function () {
       });
 
     localStorage.setItem('debug', 'leancloud*');
+    
+    const TestObject = AV.Object.extend('TestObject');
+    const testObject = new TestObject();
+    testObject.set('words', 'Hello world!');
+    testObject.save().then((testObject) => {
+    console.log('保存成功。')
+})
 };
 
 Game_Singleton.prototype.initMenus = function(inGame){
