@@ -35,8 +35,9 @@ Game_Singleton.prototype.initialize = function () {
     AI.init(this.gameWorld, this.policy);
     //initialize data base
     AV.init({
-        appId: "{{SSLlEyPP1TDmh7tGQjvHVOu7-MdYXbMMI}}",
-        appKey: "{{Uwltf6COeUkDCOKsc108V1gE}}"
+         appId: "SscV2MImxUueELA2wBws2JQr-gzGzoHsz",
+         appKey: "hTELzwv4KMwLXu7lLt1kAByn",
+         serverURL: "https://sscv2mim.lc-cn-n1-shared.com"
       });
 
     const AV = require('leancloud-storage');
