@@ -40,15 +40,14 @@ Game_Singleton.prototype.initialize = function () {
     serverURL: "https://sscv2mim.lc-cn-n1-shared.com"
 });
 
-    // const AV = require('leancloud-storage');
-    // AV.debug.enable();
-    // localStorage.setItem('debug', 'leancloud*');
+ 
+     localStorage.setItem('debug', 'leancloud*');
     
-    // const TestObject = AV.Object.extend('TestObject');
-    // const testObject = new TestObject();
-    // testObject.set('words', 'Hello world!');
-    // testObject.save().then((testObject) => {
-    // console.log('保存成功。')});
+    const TestObject = AV.Object.extend('TestObject');
+    const testObject = new TestObject();
+    testObject.set('words', 'Hello world!');
+    testObject.save().then((testObject) => {
+    console.log('保存成功。')});
 };
 
 Game_Singleton.prototype.initMenus = function(inGame){
