@@ -39,6 +39,8 @@ Game_Singleton.prototype.initialize = function () {
         appKey: "{{Uwltf6COeUkDCOKsc108V1gE}}"
       });
 
+    const AV = require('leancloud-storage');
+    AV.debug.enable();
     localStorage.setItem('debug', 'leancloud*');
     
     const TestObject = AV.Object.extend('TestObject');
