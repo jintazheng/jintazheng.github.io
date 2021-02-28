@@ -35,21 +35,20 @@ Game_Singleton.prototype.initialize = function () {
     AI.init(this.gameWorld, this.policy);
     //initialize data base
    AV.init({
-  appId: "SscV2MImxUueELA2wBws2JQr-gzGzoHsz",
-  appKey: "hTELzwv4KMwLXu7lLt1kAByn",
-  serverURL: "https://sscv2mim.lc-cn-n1-shared.com"
+    appId: "SscV2MImxUueELA2wBws2JQr-gzGzoHsz",
+    appKey: "hTELzwv4KMwLXu7lLt1kAByn",
+    serverURL: "https://sscv2mim.lc-cn-n1-shared.com"
 });
 
-    const AV = require('leancloud-storage');
-    AV.debug.enable();
-    localStorage.setItem('debug', 'leancloud*');
+    // const AV = require('leancloud-storage');
+    // AV.debug.enable();
+    // localStorage.setItem('debug', 'leancloud*');
     
-    const TestObject = AV.Object.extend('TestObject');
-    const testObject = new TestObject();
-    testObject.set('words', 'Hello world!');
-    testObject.save().then((testObject) => {
-    console.log('保存成功。')
-})
+    // const TestObject = AV.Object.extend('TestObject');
+    // const testObject = new TestObject();
+    // testObject.set('words', 'Hello world!');
+    // testObject.save().then((testObject) => {
+    // console.log('保存成功。')});
 };
 
 Game_Singleton.prototype.initMenus = function(inGame){
