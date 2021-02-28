@@ -36,7 +36,8 @@ Game_Singleton.prototype.initialize = function () {
     //initialize data base
     AV.init({
         appId: "{{SSLlEyPP1TDmh7tGQjvHVOu7-MdYXbMMI}}",
-        appKey: "{{Uwltf6COeUkDCOKsc108V1gE}}"
+        appKey: "{{Uwltf6COeUkDCOKsc108V1gE}}",
+        serverURL: "https://please-replace-with-your-customized.domain.com"
       });
 
     localStorage.setItem('debug', 'leancloud*');
