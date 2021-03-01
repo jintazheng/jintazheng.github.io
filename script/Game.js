@@ -38,16 +38,16 @@ Game_Singleton.prototype.initialize = function () {
     appId: "SscV2MImxUueELA2wBws2JQr-gzGzoHsz",
     appKey: "hTELzwv4KMwLXu7lLt1kAByn",
     serverURL: "https://sscv2mim.lc-cn-n1-shared.com"
-});
+   });
 
  
      localStorage.setItem('debug', 'leancloud*');
     
-    const TestObject = AV.Object.extend('TestObject');
-    const testObject = new TestObject();
-    testObject.set('words', 'Hello world!');
-    testObject.save().then((testObject) => {
-    console.log('保存成功。')});
+    const Record = AV.Object.extend('Record');
+    const record = new Record();
+    record.set('words', 'Hello world!');
+    record.save().then((record) => {
+    console.log('save successfully')});
 };
 
 Game_Singleton.prototype.initMenus = function(inGame){
