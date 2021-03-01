@@ -13,13 +13,14 @@ function Stick(position){
 
 Stick.prototype.handleInput = function (delta) {
 
-    if (this.power>0 && Mouse.left.down){
+    if (this.power>0 && Mouse.left.down && !Game.gameWorld.whiteBall.moving){
       var strike = sounds.strike.cloneNode(true);
       strike.volume = (this.power/(10))<1?(this.power/(10)):1;
       strike.play();
       this.shooting = true;
       this.origin = this.shotOrigin.copy();
-
+      // count times of hitting white ball
+      Game.policy.hitWhiteBallTimes++;
       Game.gameWorld.whiteBall.shoot(this.power, this.rotation);
       KEYBOARD_INPUT_ON = false;
       Game.policy.foul = true;
@@ -44,7 +45,6 @@ Stick.prototype.shoot = function(power, rotation){
   }
   this.shooting = true;
   this.origin = this.shotOrigin.copy();
-
   Game.gameWorld.whiteBall.shoot(this.power, this.rotation);
   var stick = this;
   setTimeout(function(){stick.visible = false;}, 500);

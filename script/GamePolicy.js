@@ -15,6 +15,9 @@ function GamePolicy(){
 
     this.UsedTimeHit = 0;
     this.time = 0;
+
+    //hitWhitboallTimes
+    this.hitWhiteBallTimes = 0;
 }
 
 GamePolicy.prototype.reset = function(){
@@ -44,11 +47,14 @@ GamePolicy.prototype.drawScores = function(){//"#096834"
             record.set('Group', Game.gameWorld.applyGroup.toString());
             record.set('Bounces', this.target.toString());
             record.set('Time', this.time.toString());
+            record.set('Tries', this.hitWhiteBallTimes.toString());
             record.save().then((record) => {
             console.log('save successfully')});
+
+            this.hitWhiteBallTimes = 0;
         }else if(2 == this.hitBorderTimes && 1 == this.target){
             this.target = 2;
-              //used time
+            //used time
             this.time = (new Date().getTime() - this.UsedTimeHit);
             const Record = AV.Object.extend('Record');
             const record = new Record();
@@ -57,8 +63,11 @@ GamePolicy.prototype.drawScores = function(){//"#096834"
             record.set('Group', Game.gameWorld.applyGroup.toString());
             record.set('Bounces', this.target.toString());
             record.set('Time', this.time.toString());
+            record.set('Tries', this.hitWhiteBallTimes.toString());
             record.save().then((record) => {
             console.log('save successfully')});
+
+            this.hitWhiteBallTimes = 0;
         }
     }
 

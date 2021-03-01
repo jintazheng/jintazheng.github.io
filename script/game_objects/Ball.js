@@ -50,7 +50,6 @@ Ball.prototype.shoot = function (power, angle) {
         return;
 
     this.moving = true;
-
     this.velocity = calculateBallVelocity(power, angle);
 }
 
