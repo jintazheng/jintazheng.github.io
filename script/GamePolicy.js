@@ -44,7 +44,6 @@ GamePolicy.prototype.drawScores = function(){//"#096834"
             if(this.HelpMenuTime){
                 this.time =  this.time - 5000;
             }
-            Game.UsedTimeHit = new Date().getTime();
             const Record = AV.Object.extend('Record');
             const record = new Record();
             record.set('User_ID', Game.userId.toString());
@@ -57,6 +56,7 @@ GamePolicy.prototype.drawScores = function(){//"#096834"
             console.log('save successfully')});
 
             this.hitWhiteBallTimes = 0;
+            this.UsedTimeHit = new Date().getTime();
         }else if(2 == this.hitBorderTimes && 1 == this.target){
             this.target = 2;
             //used time
