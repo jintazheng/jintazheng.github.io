@@ -12,6 +12,9 @@ function GamePolicy(){
     this.heightInterv = 45;
     this.weithInterv = 210;
     this.gameover = false;
+
+    this.UsedTimeHit = 0;
+    this.time = 0;
 }
 
 GamePolicy.prototype.reset = function(){
@@ -31,8 +34,31 @@ GamePolicy.prototype.drawScores = function(){//"#096834"
     if(this.whiteHitRed){
         if(1 == this.hitBorderTimes && 0 == this.target){
             this.target = 1;
+            //used time
+            this.time = (new Date().getTime() - this.UsedTimeHit);
+            Game.UsedTimeHit = new Date().getTime();
+            const Record = AV.Object.extend('Record');
+            const record = new Record();
+            record.set('User_ID', Game.userId.toString());
+            record.set('Type',  Game.gameWorld.groupType.toString());
+            record.set('Group', Game.gameWorld.applyGroup.toString());
+            record.set('Bounces', this.target.toString());
+            record.set('Time', this.time.toString());
+            record.save().then((record) => {
+            console.log('save successfully')});
         }else if(2 == this.hitBorderTimes && 1 == this.target){
             this.target = 2;
+              //used time
+            this.time = (new Date().getTime() - this.UsedTimeHit);
+            const Record = AV.Object.extend('Record');
+            const record = new Record();
+            record.set('User_ID', Game.userId.toString());
+            record.set('Type',  Game.gameWorld.groupType.toString());
+            record.set('Group', Game.gameWorld.applyGroup.toString());
+            record.set('Bounces', this.target.toString());
+            record.set('Time', this.time.toString());
+            record.save().then((record) => {
+            console.log('save successfully')});
         }
     }
 

@@ -17,6 +17,7 @@ function Game_Singleton() {
     this.gameWorld = undefined;
     this.sound = true;
     this.mainMenu = new Menu();
+    this.userId = "";
 }
 
 Game_Singleton.prototype.start = function (divName, canvasName, x, y) {
@@ -34,20 +35,16 @@ Game_Singleton.prototype.initialize = function () {
 
     AI.init(this.gameWorld, this.policy);
     //initialize data base
-   AV.init({
-    appId: "SscV2MImxUueELA2wBws2JQr-gzGzoHsz",
-    appKey: "hTELzwv4KMwLXu7lLt1kAByn",
-    serverURL: "https://sscv2mim.lc-cn-n1-shared.com"
-   });
-
- 
-     localStorage.setItem('debug', 'leancloud*');
-    
-    const Record = AV.Object.extend('Record');
-    const record = new Record();
-    record.set('words', 'Hello world!');
-    record.save().then((record) => {
-    console.log('save successfully')});
+    AV.init({
+        appId: "SscV2MImxUueELA2wBws2JQr-gzGzoHsz",
+        appKey: "hTELzwv4KMwLXu7lLt1kAByn",
+        serverURL: "https://sscv2mim.lc-cn-n1-shared.com"
+    });
+    localStorage.setItem('debug', 'leancloud*');
+    //get user id
+    var time = new Date().getTime();
+    var random_num = Math.floor(Math.random() * Math.floor(1000));
+    this.userId = time.toString().concat(random_num.toString());
 };
 
 Game_Singleton.prototype.initMenus = function(inGame){
@@ -109,10 +106,7 @@ Game_Singleton.prototype.startNewGame = function(){
         1, 
         new Vector2(sprites.controls.width/2,sprites.controls.height/2)
     );
-
-   // setTimeout(()=>{
-    //    Game.mainLoop();
-   // },10);
+    Game.policy.UsedTimeHit = new Date().getTime();
      setTimeout(()=>{
          Game.mainLoop();
      },5000);
@@ -125,6 +119,8 @@ Game_Singleton.prototype.restartGame = function(){
     Game.gameWorld.reset();
     Game.policy.reset();
     Canvas2D.clear();
+    //
+    Game.policy.UsedTimeHit = new Date().getTime();
 }
 
 Game_Singleton.prototype.continueGame = function(){
