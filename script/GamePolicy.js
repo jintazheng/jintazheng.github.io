@@ -13,6 +13,8 @@ function GamePolicy(){
     this.weithInterv = 210;
     this.gameover = false;
 
+    //for the first time count the help menu showing time
+    this.HelpMenuTime = false;
     this.UsedTimeHit = 0;
     this.time = 0;
 
@@ -39,6 +41,9 @@ GamePolicy.prototype.drawScores = function(){//"#096834"
             this.target = 1;
             //used time
             this.time = (new Date().getTime() - this.UsedTimeHit);
+            if(this.HelpMenuTime){
+                this.time =  this.time - 5000;
+            }
             Game.UsedTimeHit = new Date().getTime();
             const Record = AV.Object.extend('Record');
             const record = new Record();
