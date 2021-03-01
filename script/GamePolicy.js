@@ -15,6 +15,7 @@ function GamePolicy(){
 
     //for the first time count the help menu showing time
     this.HelpMenuTime = false;
+    this.target2FirstTime = false;
     this.UsedTimeHit = 0;
     this.time = 0;
 
@@ -56,7 +57,7 @@ GamePolicy.prototype.drawScores = function(){//"#096834"
             console.log('save successfully')});
 
             this.hitWhiteBallTimes = 0;
-            this.UsedTimeHit = new Date().getTime();
+            this.target2FirstTime = true;
         }else if(2 == this.hitBorderTimes && 1 == this.target){
             this.target = 2;
             //used time

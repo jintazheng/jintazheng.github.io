@@ -120,6 +120,10 @@ Game_Singleton.prototype.restartGame = function(){
     Game.gameWorld.reset();
     Game.policy.reset();
     Canvas2D.clear();
+    if(Game.policy.target2FirstTime){
+        Game.policy.UsedTimeHit = new Date().getTime();
+        Game.policy.target2FirstTime = false;
+    }
 }
 
 Game_Singleton.prototype.continueGame = function(){
