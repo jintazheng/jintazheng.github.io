@@ -39,7 +39,7 @@ GamePolicy.prototype.drawOver = function(){
 }
 GamePolicy.prototype.drawScores = function(){//"#096834"
 
-    if(this.whiteHitRed){
+    if(this.whiteHitRed && !Game.policy.gameover){
         if(1 == this.hitBorderTimes && 0 == this.target){
             this.target = 1;
             //used time
