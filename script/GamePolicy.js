@@ -18,6 +18,8 @@ function GamePolicy(){
     this.target2FirstTime = false;
     this.UsedTimeHit = 0;
     this.time = 0;
+    //hitdirection
+    this.HitDir = 0;
 
     //hitWhitboallTimes
     this.hitWhiteBallTimes = 0;
@@ -53,6 +55,7 @@ GamePolicy.prototype.drawScores = function(){//"#096834"
             record.set('Bounces', this.target.toString());
             record.set('Time', this.time.toString());
             record.set('Tries', this.hitWhiteBallTimes.toString());
+            record.set('Dir', this.HitDir.toString());
             record.save().then((record) => {
             console.log('save successfully')});
 
@@ -70,26 +73,27 @@ GamePolicy.prototype.drawScores = function(){//"#096834"
             record.set('Bounces', this.target.toString());
             record.set('Time', this.time.toString());
             record.set('Tries', this.hitWhiteBallTimes.toString());
+            record.set('Dir', this.HitDir.toString());
             record.save().then((record) => {
             console.log('save successfully')});
 
             this.hitWhiteBallTimes = 0;
         }
     }
-
+    var height_b = 15;
     if(0 == this.target){
-        Canvas2D.drawText("Hit the red ball with 1 bounce !", new Vector2(this.weithInterv,0), new Vector2(150,0), "#11b85c", "top", "Impact", "40px");
+        Canvas2D.drawText("Hit the red ball with 1 bounce !", new Vector2(this.weithInterv,height_b), new Vector2(150,0), "#11b85c", "top", "Impact", "40px");
     }else if(1 == this.target){
-        Canvas2D.drawText("Hit the red ball with 2 bounces !", new Vector2(this.weithInterv,0), new Vector2(150,0), "#11b85c", "top", "Impact", "40px");
+        Canvas2D.drawText("Hit the red ball with 2 bounces !", new Vector2(this.weithInterv,height_b), new Vector2(150,0), "#11b85c", "top", "Impact", "40px");
     }else if(2 == this.target){
-        Canvas2D.drawText("Hit the red ball with 2 bounces !", new Vector2(this.weithInterv,0), new Vector2(150,0), "#11b85c", "top", "Impact", "40px");
+        Canvas2D.drawText("Hit the red ball with 2 bounces !", new Vector2(this.weithInterv,height_b), new Vector2(150,0), "#11b85c", "top", "Impact", "40px");
         this.gameover = true;
     }
-    Canvas2D.drawText("Bouncing from borders times: " + (this.hitBorderTimes), new Vector2(this.weithInterv, this.heightInterv), new Vector2(150,0), "#0e964b", "top", "Impact", "40px");
+    Canvas2D.drawText("Bouncing from borders times: " + (this.hitBorderTimes), new Vector2(this.weithInterv, height_b + this.heightInterv), new Vector2(150,0), "#0e964b", "top", "Impact", "40px");
     if(this.whiteHitRed){
-        Canvas2D.drawText("The white ball hit the red ball: Yes", new Vector2(this.weithInterv,  this.heightInterv * 2), new Vector2(150,0), "#0e964b", "top", "Impact", "40px");
+        Canvas2D.drawText("The white ball hit the red ball: Yes", new Vector2(this.weithInterv,  height_b + this.heightInterv * 2), new Vector2(150,0), "#0e964b", "top", "Impact", "40px");
     }else{
-        Canvas2D.drawText("The white ball hit the red ball: No", new Vector2(this.weithInterv, this.heightInterv * 2), new Vector2(150,0), "#0e964b", "top", "Impact", "40px");
+        Canvas2D.drawText("The white ball hit the red ball: No", new Vector2(this.weithInterv, height_b + this.heightInterv * 2), new Vector2(150,0), "#0e964b", "top", "Impact", "40px");
     }
 }
 

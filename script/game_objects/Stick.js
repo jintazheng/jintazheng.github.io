@@ -21,6 +21,8 @@ Stick.prototype.handleInput = function (delta) {
       this.origin = this.shotOrigin.copy();
       // count times of hitting white ball
       Game.policy.hitWhiteBallTimes++;
+      //direction
+      Game.policy.HitDir = this.rotation;
       Game.gameWorld.whiteBall.shoot(this.power, this.rotation);
       KEYBOARD_INPUT_ON = false;
       Game.policy.foul = true;

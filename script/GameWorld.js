@@ -2,11 +2,13 @@
 
 function GameWorld() {
     //0 is star2222, and 1 is star333
-    this.groupType = 0;
+    this.groupType = 1;
     this.applyGroup = true;
     this.resetGameWorld();
     this.stick = new Stick({ x: this.whiteBall.position.x, y: this.whiteBall.position.y });
     this.gameOver = false;
+
+    this.step_inv = 0;
 
     if (0 == this.groupType) {
         this.borders = [
@@ -23,7 +25,7 @@ function GameWorld() {
         this.bordersGroup = new Array(this.star2222group.group.length);
 
         for (let i = 0; i < this.star2222group.group.length; i++) {
-            this.yellowBallGroup[i] = new Ball(new Vector2(500, 633), Color.yellow);
+            this.yellowBallGroup[i] = new Ball(new Vector2(500, 633 + this.step_inv), Color.yellow);
             this.redBallsGroup[i] = new Ball(new Vector2(300, 633), Color.red);
             this.whiteBallsGroup[i] = new Ball(new Vector2(
                 Game.size.x / 2,
@@ -90,11 +92,11 @@ function GameWorld() {
 GameWorld.prototype.resetGameWorld = function () {
     if (0 == this.groupType) {
         this.redBalls = [new Ball(new Vector2(Game.size.x / 2 + BORDER_SIZE / 3, Game.size.y - BORDER_SIZE / 4), Color.red)]
-        this.yellowBalls = [new Ball(new Vector2(Game.size.x / 2 - BORDER_SIZE / 9, Game.size.y - BORDER_SIZE / 4), Color.yellow)];
+        this.yellowBalls = [new Ball(new Vector2(Game.size.x / 2 - BORDER_SIZE / 9, Game.size.y - BORDER_SIZE / 3), Color.yellow)];
         this.whiteBall = new Ball(new Vector2(Game.size.x / 2 - BORDER_SIZE / 3, Game.size.y - BORDER_SIZE / 4), Color.white);
     } else if (1 == this.groupType) {
         this.redBalls = [new Ball(new Vector2(Game.size.x / 2 + BORDER_SIZE_333 / 5, Game.size.y - BORDER_SIZE_333 / 3  - Math.sqrt(3) / 2 * BORDER_SIZE_333), Color.red)]
-        this.yellowBalls = [new Ball(new Vector2(Game.size.x / 2 , Game.size.y - BORDER_SIZE_333 / 3 - Math.sqrt(3) / 2 * BORDER_SIZE_333), Color.yellow)];
+        this.yellowBalls = [new Ball(new Vector2(Game.size.x / 2 , Game.size.y - BORDER_SIZE_333 / 2.5 - Math.sqrt(3) / 2 * BORDER_SIZE_333), Color.yellow)];
         this.whiteBall = new Ball(new Vector2(Game.size.x / 2 - BORDER_SIZE_333 / 5, Game.size.y - BORDER_SIZE_333 / 3 - Math.sqrt(3) / 2 * BORDER_SIZE_333), Color.white);
     }
     this.balls = [this.yellowBalls[0], this.redBalls[0], this.whiteBall];
@@ -236,7 +238,13 @@ GameWorld.prototype.handleCollision = function (ball1, ball2, delta) {
 }
 
 GameWorld.prototype.draw = function () {
-    Canvas2D.drawImage(sprites.background);
+    if(Game.policy.gameover && !this.ballsMoving()){
+        Canvas2D.drawImage(sprites.background);
+    }else if(0 == this.groupType){
+        Canvas2D.drawImage(sprites.background2222);
+    }else if(1 == this.groupType){
+        Canvas2D.drawImage(sprites.background333);
+    }
     
     if (0 == this.groupType) {
         //draw group
