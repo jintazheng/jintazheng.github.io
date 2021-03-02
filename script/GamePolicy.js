@@ -78,15 +78,36 @@ GamePolicy.prototype.drawScores = function(){//"#096834"
             console.log('save successfully')});
 
             this.hitWhiteBallTimes = 0;
+            this.target2FirstTime = true;
+        }else if(3 == this.hitBorderTimes && 2 == this.target){
+            this.target = 3;
+            //used time
+            this.time = (new Date().getTime() - this.UsedTimeHit);
+            const Record = AV.Object.extend('Record');
+            const record = new Record();
+            record.set('User_ID', Game.userId.toString());
+            record.set('Type',  Game.gameWorld.groupType.toString());
+            record.set('Group', Game.gameWorld.applyGroup.toString());
+            record.set('Bounces', this.target.toString());
+            record.set('Time', this.time.toString());
+            record.set('Tries', this.hitWhiteBallTimes.toString());
+            record.set('Dir', this.HitDir.toString());
+            record.save().then((record) => {
+            console.log('save successfully')});
+
+            this.hitWhiteBallTimes = 0;
         }
     }
+    
     var height_b = 15;
     if(0 == this.target){
         Canvas2D.drawText("Hit the red ball with 1 bounce !", new Vector2(this.weithInterv,height_b), new Vector2(150,0), "#11b85c", "top", "Impact", "40px");
     }else if(1 == this.target){
         Canvas2D.drawText("Hit the red ball with 2 bounces !", new Vector2(this.weithInterv,height_b), new Vector2(150,0), "#11b85c", "top", "Impact", "40px");
     }else if(2 == this.target){
-        Canvas2D.drawText("Hit the red ball with 2 bounces !", new Vector2(this.weithInterv,height_b), new Vector2(150,0), "#11b85c", "top", "Impact", "40px");
+        Canvas2D.drawText("Hit the red ball with 3 bounces !", new Vector2(this.weithInterv,height_b), new Vector2(150,0), "#11b85c", "top", "Impact", "40px");
+    }else if(3 == this.target){
+        Canvas2D.drawText("Good job !", new Vector2(this.weithInterv,height_b), new Vector2(150,0), "#11b85c", "top", "Impact", "40px");
         this.gameover = true;
     }
     Canvas2D.drawText("Bouncing from borders times: " + (this.hitBorderTimes), new Vector2(this.weithInterv, height_b + this.heightInterv), new Vector2(150,0), "#0e964b", "top", "Impact", "40px");
