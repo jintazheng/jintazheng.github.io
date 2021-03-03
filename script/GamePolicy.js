@@ -132,24 +132,24 @@ GamePolicy.prototype.drawScores = function(){//"#096834"
     }
 
     if(1 == drawBounces){
-        Canvas2D.drawText("Hit the red ball with 1 bounce !", new Vector2(this.weithInterv,height_b), new Vector2(150,0), "#11b85c", "top", "Impact", "40px");
+        Canvas2D.drawText("Objective: Hit the red ball with 1 bounce", new Vector2(this.weithInterv,height_b), new Vector2(150,0), "#11b85c", "top", "Impact", "40px");
     }
     if(2 == drawBounces){
-        Canvas2D.drawText("Hit the red ball with 2 bounces !", new Vector2(this.weithInterv,height_b), new Vector2(150,0), "#11b85c", "top", "Impact", "40px");
+        Canvas2D.drawText("Objective: Hit the red ball with 2 bounces", new Vector2(this.weithInterv,height_b), new Vector2(150,0), "#11b85c", "top", "Impact", "40px");
     }
     if(3 == drawBounces){
-        Canvas2D.drawText("Hit the red ball with 3 bounces !", new Vector2(this.weithInterv,height_b), new Vector2(150,0), "#11b85c", "top", "Impact", "40px");
+        Canvas2D.drawText("Objective: Hit the red ball with 3 bounces", new Vector2(this.weithInterv,height_b), new Vector2(150,0), "#11b85c", "top", "Impact", "40px");
     }
     if(4 == drawBounces){
         Canvas2D.drawText("Good job !", new Vector2(this.weithInterv,height_b), new Vector2(150,0), "#11b85c", "top", "Impact", "40px");
     }
 
-    Canvas2D.drawText("Bouncing from borders times: " + (this.hitBorderTimes), new Vector2(this.weithInterv, height_b + this.heightInterv), new Vector2(150,0), "#0e964b", "top", "Impact", "40px");
-    if(this.whiteHitRed){
-        Canvas2D.drawText("The white ball hit the red ball: Yes", new Vector2(this.weithInterv,  height_b + this.heightInterv * 2), new Vector2(150,0), "#0e964b", "top", "Impact", "40px");
-    }else{
-        Canvas2D.drawText("The white ball hit the red ball: No", new Vector2(this.weithInterv, height_b + this.heightInterv * 2), new Vector2(150,0), "#0e964b", "top", "Impact", "40px");
-    }
+    Canvas2D.drawText("Status: " + (this.hitBorderTimes) + " bounces from the edges", new Vector2(this.weithInterv, height_b + this.heightInterv), new Vector2(150,0), "#0e964b", "top", "Impact", "40px");
+    // if(this.whiteHitRed){
+    //     Canvas2D.drawText("Hit the red ball: Yes", new Vector2(this.weithInterv,  height_b + this.heightInterv * 2), new Vector2(150,0), "#0e964b", "top", "Impact", "40px");
+    // }else{
+    //     Canvas2D.drawText("Hit the red ball: No", new Vector2(this.weithInterv, height_b + this.heightInterv * 2), new Vector2(150,0), "#0e964b", "top", "Impact", "40px");
+    // }
 }
 
 GamePolicy.prototype.checkColisionValidity = function(ball1,ball2){
