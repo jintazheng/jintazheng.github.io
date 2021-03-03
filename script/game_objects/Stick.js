@@ -7,7 +7,7 @@ function Stick(position){
     this.shooting = false;
     this.visible = true;
     this.rotation = 0;
-    this.power = 14;
+    this.power = 15;
     this.trackMouse = true;
 }
 
@@ -63,7 +63,7 @@ Stick.prototype.reset = function(){
 	this.origin = new Vector2(970,11);
   this.shooting = false;
   this.visible = true;
-	this.power = 14;
+	this.power = 15;
 };
 
 Stick.prototype.draw = function () {

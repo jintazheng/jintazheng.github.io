@@ -91,7 +91,7 @@ function GameWorld() {
 }
 GameWorld.prototype.resetGameWorld = function () {
     if (0 == this.groupType) {
-        this.redBalls = [new Ball(new Vector2(Game.size.x / 2 + BORDER_SIZE / 3, Game.size.y - BORDER_SIZE / 4), Color.red)]
+        this.redBalls = [new Ball(new Vector2(Game.size.x / 2 + BORDER_SIZE / 3, Game.size.y - BORDER_SIZE / 1.9), Color.red)]
         this.yellowBalls = [new Ball(new Vector2(Game.size.x / 2 - BORDER_SIZE / 9, Game.size.y - BORDER_SIZE / 3), Color.yellow)];
         this.whiteBall = new Ball(new Vector2(Game.size.x / 2 - BORDER_SIZE / 3, Game.size.y - BORDER_SIZE / 4), Color.white);
     } else if (1 == this.groupType) {
