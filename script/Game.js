@@ -35,12 +35,12 @@ Game_Singleton.prototype.initialize = function () {
 
     AI.init(this.gameWorld, this.policy);
     //initialize data base
-    // AV.init({
-    //     appId: "SscV2MImxUueELA2wBws2JQr-gzGzoHsz",
-    //     appKey: "hTELzwv4KMwLXu7lLt1kAByn",
-    //     serverURL: "https://sscv2mim.lc-cn-n1-shared.com"
-    // });
-    // localStorage.setItem('debug', 'leancloud*');
+    AV.init({
+        appId: "SscV2MImxUueELA2wBws2JQr-gzGzoHsz",
+        appKey: "hTELzwv4KMwLXu7lLt1kAByn",
+        serverURL: "https://sscv2mim.lc-cn-n1-shared.com"
+    });
+    localStorage.setItem('debug', 'leancloud*');
     //get user id
     var time = new Date().getTime();
     var random_num = Math.floor(Math.random() * Math.floor(1000));

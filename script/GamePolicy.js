@@ -50,17 +50,17 @@ GamePolicy.prototype.drawScores = function(){//"#096834"
             if(this.HelpMenuTime){
                 this.time =  this.time - 5000;
             }
-            // const Record = AV.Object.extend('Record');
-            // const record = new Record();
-            // record.set('User_ID', Game.userId.toString());
-            // record.set('Type',  Game.gameWorld.groupType.toString());
-            // record.set('Group', Game.gameWorld.applyGroup.toString());
-            // record.set('Bounces', this.target.toString());
-            // record.set('Time', this.time.toString());
-            // record.set('Tries', this.hitWhiteBallTimes.toString());
-            // record.set('Dir', this.HitDir.toString());
-            // record.save().then((record) => {
-            // console.log('save successfully')});
+            const Record = AV.Object.extend('Record');
+            const record = new Record();
+            record.set('User_ID', Game.userId.toString());
+            record.set('Type',  Game.gameWorld.groupType.toString());
+            record.set('Group', Game.gameWorld.applyGroup.toString());
+            record.set('Bounces', this.target.toString());
+            record.set('Time', this.time.toString());
+            record.set('Tries', this.hitWhiteBallTimes.toString());
+            record.set('Dir', this.HitDir.toString());
+            record.save().then((record) => {
+            console.log('save successfully')});
 
             this.hitWhiteBallTimes = 0;
             this.target2FirstTime = true;
@@ -69,17 +69,17 @@ GamePolicy.prototype.drawScores = function(){//"#096834"
             this.target = 2;
             //used time
             this.time = (new Date().getTime() - this.UsedTimeHit);
-            // const Record = AV.Object.extend('Record');
-            // const record = new Record();
-            // record.set('User_ID', Game.userId.toString());
-            // record.set('Type',  Game.gameWorld.groupType.toString());
-            // record.set('Group', Game.gameWorld.applyGroup.toString());
-            // record.set('Bounces', this.target.toString());
-            // record.set('Time', this.time.toString());
-            // record.set('Tries', this.hitWhiteBallTimes.toString());
-            // record.set('Dir', this.HitDir.toString());
-            // record.save().then((record) => {
-            // console.log('save successfully')});
+            const Record = AV.Object.extend('Record');
+            const record = new Record();
+            record.set('User_ID', Game.userId.toString());
+            record.set('Type',  Game.gameWorld.groupType.toString());
+            record.set('Group', Game.gameWorld.applyGroup.toString());
+            record.set('Bounces', this.target.toString());
+            record.set('Time', this.time.toString());
+            record.set('Tries', this.hitWhiteBallTimes.toString());
+            record.set('Dir', this.HitDir.toString());
+            record.save().then((record) => {
+            console.log('save successfully')});
 
             this.hitWhiteBallTimes = 0;
             this.target2FirstTime = true;
@@ -87,18 +87,18 @@ GamePolicy.prototype.drawScores = function(){//"#096834"
             this.boundaryState = true;
             this.target = 3;
             //used time
-            // this.time = (new Date().getTime() - this.UsedTimeHit);
-            // const Record = AV.Object.extend('Record');
-            // const record = new Record();
-            // record.set('User_ID', Game.userId.toString());
-            // record.set('Type',  Game.gameWorld.groupType.toString());
-            // record.set('Group', Game.gameWorld.applyGroup.toString());
-            // record.set('Bounces', this.target.toString());
-            // record.set('Time', this.time.toString());
-            // record.set('Tries', this.hitWhiteBallTimes.toString());
-            // record.set('Dir', this.HitDir.toString());
-            // record.save().then((record) => {
-            // console.log('save successfully')});
+            this.time = (new Date().getTime() - this.UsedTimeHit);
+            const Record = AV.Object.extend('Record');
+            const record = new Record();
+            record.set('User_ID', Game.userId.toString());
+            record.set('Type',  Game.gameWorld.groupType.toString());
+            record.set('Group', Game.gameWorld.applyGroup.toString());
+            record.set('Bounces', this.target.toString());
+            record.set('Time', this.time.toString());
+            record.set('Tries', this.hitWhiteBallTimes.toString());
+            record.set('Dir', this.HitDir.toString());
+            record.save().then((record) => {
+            console.log('save successfully')});
 
             this.hitWhiteBallTimes = 0;
             this.gameover = true;
