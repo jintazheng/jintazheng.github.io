@@ -23,6 +23,8 @@ function GamePolicy(){
 
     //hitWhitboallTimes
     this.hitWhiteBallTimes = 0;
+    //boundary state
+    this.boundaryState = false;
 }
 
 GamePolicy.prototype.reset = function(){
@@ -41,6 +43,7 @@ GamePolicy.prototype.drawScores = function(){//"#096834"
 
     if(this.whiteHitRed && !Game.policy.gameover){
         if(1 == this.hitBorderTimes && 0 == this.target){
+            this.boundaryState = true;
             this.target = 1;
             //used time
             this.time = (new Date().getTime() - this.UsedTimeHit);
@@ -62,6 +65,7 @@ GamePolicy.prototype.drawScores = function(){//"#096834"
             this.hitWhiteBallTimes = 0;
             this.target2FirstTime = true;
         }else if(2 == this.hitBorderTimes && 1 == this.target){
+            this.boundaryState = true;
             this.target = 2;
             //used time
             this.time = (new Date().getTime() - this.UsedTimeHit);
@@ -80,6 +84,7 @@ GamePolicy.prototype.drawScores = function(){//"#096834"
             this.hitWhiteBallTimes = 0;
             this.target2FirstTime = true;
         }else if(3 == this.hitBorderTimes && 2 == this.target){
+            this.boundaryState = true;
             this.target = 3;
             //used time
             this.time = (new Date().getTime() - this.UsedTimeHit);
@@ -96,20 +101,49 @@ GamePolicy.prototype.drawScores = function(){//"#096834"
             console.log('save successfully')});
 
             this.hitWhiteBallTimes = 0;
+            this.gameover = true;
         }
     }
-    
-    var height_b = 15;
-    if(0 == this.target){
-        Canvas2D.drawText("Hit the red ball with 1 bounce !", new Vector2(this.weithInterv,height_b), new Vector2(150,0), "#11b85c", "top", "Impact", "40px");
-    }else if(1 == this.target){
-        Canvas2D.drawText("Hit the red ball with 2 bounces !", new Vector2(this.weithInterv,height_b), new Vector2(150,0), "#11b85c", "top", "Impact", "40px");
-    }else if(2 == this.target){
-        Canvas2D.drawText("Hit the red ball with 3 bounces !", new Vector2(this.weithInterv,height_b), new Vector2(150,0), "#11b85c", "top", "Impact", "40px");
-    }else if(3 == this.target){
-        Canvas2D.drawText("Good job !", new Vector2(this.weithInterv,height_b), new Vector2(150,0), "#11b85c", "top", "Impact", "40px");
-        this.gameover = true;
+    if(!Game.gameWorld.ballsMoving()){
+        this.boundaryState = false;
     }
+    var height_b = 15;
+    var drawBounces = 1;
+    if(0 == this.target){
+        drawBounces = 1;
+    }
+    if(1 == this.target){
+        drawBounces = 2;
+    }
+    if(2 == this.target){
+        drawBounces = 3;
+    }
+    if(3 == this.target){
+        drawBounces = 4;
+    }
+    if(1 == this.target && this.boundaryState){
+        drawBounces = 1;
+    }
+    if(2 == this.target && this.boundaryState){
+        drawBounces = 2;
+    }
+    if(3 == this.target && this.boundaryState){
+        drawBounces = 3;
+    }
+
+    if(1 == drawBounces){
+        Canvas2D.drawText("Hit the red ball with 1 bounce !", new Vector2(this.weithInterv,height_b), new Vector2(150,0), "#11b85c", "top", "Impact", "40px");
+    }
+    if(2 == drawBounces){
+        Canvas2D.drawText("Hit the red ball with 2 bounces !", new Vector2(this.weithInterv,height_b), new Vector2(150,0), "#11b85c", "top", "Impact", "40px");
+    }
+    if(3 == drawBounces){
+        Canvas2D.drawText("Hit the red ball with 3 bounces !", new Vector2(this.weithInterv,height_b), new Vector2(150,0), "#11b85c", "top", "Impact", "40px");
+    }
+    if(4 == drawBounces){
+        Canvas2D.drawText("Good job !", new Vector2(this.weithInterv,height_b), new Vector2(150,0), "#11b85c", "top", "Impact", "40px");
+    }
+
     Canvas2D.drawText("Bouncing from borders times: " + (this.hitBorderTimes), new Vector2(this.weithInterv, height_b + this.heightInterv), new Vector2(150,0), "#0e964b", "top", "Impact", "40px");
     if(this.whiteHitRed){
         Canvas2D.drawText("The white ball hit the red ball: Yes", new Vector2(this.weithInterv,  height_b + this.heightInterv * 2), new Vector2(150,0), "#0e964b", "top", "Impact", "40px");
