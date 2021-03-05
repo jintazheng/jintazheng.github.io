@@ -95,8 +95,8 @@ GameWorld.prototype.resetGameWorld = function () {
         this.yellowBalls = [new Ball(new Vector2(Game.size.x / 2 - BORDER_SIZE / 9, Game.size.y - BORDER_SIZE / 3), Color.yellow)];
         this.whiteBall = new Ball(new Vector2(Game.size.x / 2 - BORDER_SIZE / 3, Game.size.y - BORDER_SIZE / 4), Color.white);
     } else if (1 == this.groupType) {
-        this.redBalls = [new Ball(new Vector2(Game.size.x / 2 + BORDER_SIZE_333 / 5, Game.size.y - BORDER_SIZE_333 / 3  - Math.sqrt(3) / 2 * BORDER_SIZE_333), Color.red)]
-        this.yellowBalls = [new Ball(new Vector2(Game.size.x / 2 , Game.size.y - BORDER_SIZE_333 / 2.5 - Math.sqrt(3) / 2 * BORDER_SIZE_333), Color.yellow)];
+        this.redBalls = [new Ball(new Vector2(Game.size.x / 2 + BORDER_SIZE_333 / 10, Game.size.y - BORDER_SIZE_333 / 2  - Math.sqrt(3) / 2 * BORDER_SIZE_333), Color.red)]
+        this.yellowBalls = [new Ball(new Vector2(Game.size.x / 2 , Game.size.y - BORDER_SIZE_333 / 1.8 - Math.sqrt(3) / 2 * BORDER_SIZE_333), Color.yellow)];
         this.whiteBall = new Ball(new Vector2(Game.size.x / 2 - BORDER_SIZE_333 / 5, Game.size.y - BORDER_SIZE_333 / 3 - Math.sqrt(3) / 2 * BORDER_SIZE_333), Color.white);
     }
     this.balls = [this.yellowBalls[0], this.redBalls[0], this.whiteBall];

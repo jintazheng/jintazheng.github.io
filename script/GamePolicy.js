@@ -5,7 +5,7 @@ function GamePolicy(){
     this.rightBorderX = Game.size.x/2 + BORDER_SIZE/2;
     this.topBorderY = Game.size.y - BORDER_SIZE;
     this.bottomBorderY = Game.size.y;
-    this.target = 0;
+    this.target = 1;
     this.whiteHitRed = false;
     this.hitBorderTimes = 0;
 
