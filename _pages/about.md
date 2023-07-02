@@ -11,7 +11,7 @@ redirect_from:
 I am a final-year PhD student supervised by Prof. [Eugene Zhang](https://web.engr.oregonstate.edu/~zhange/) in the Electrical Engineering & Computer Science Department at Oregon State University. I hold a Bachelor's degree in Computer Science from Sichuan University.
 
 My work mainly focus computer graphics and mathematical/scientific visualization. 
-I am interested in combining complex and abstract mathematical theories with computer graphics to create visually compelling results. Conversely, using computer graphics to immerse humans into mathematical theories. 
+I am interested in combining mathematical theories with computer graphics for visualization and interaction. Conversely, using computer graphics to immerse humans into mathematical theories. 
 Additionally, I am also researching how to immerse humans into virtual soundscapes. This involves separating, analyzing synthesizing, and propagating sound to enhance the immersive experience.
 
 I have also collaborated with Prof. [Yue Zhang](https://web.engr.oregonstate.edu/~zhangyue/index.html) on designing rumble strips to contribute to reducing exterior noise using finite element modeling.
