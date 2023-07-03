@@ -8,7 +8,8 @@ redirect_from:
   - /about.html
 ---
 
-I am a final-year PhD student supervised by Prof. [Eugene Zhang](https://web.engr.oregonstate.edu/~zhange/) in the Electrical Engineering & Computer Science Department at Oregon State University. I hold a Bachelor's degree in Computer Science from Sichuan University.
+I am a final-year PhD student advised by Prof. [Eugene Zhang](https://web.engr.oregonstate.edu/~zhange/) in the Electrical Engineering & Computer Science Department at Oregon State University. I am also co-advised by Prof. [Yue Zhang](https://web.engr.oregonstate.edu/~zhangyue/index.html) when I am a junior PhD student.
+I hold a Bachelor's degree in Computer Science from Sichuan University.
 
 My work mainly focus on computer graphics and visualization. 
 I am interested in combining mathematical theories with computer graphics for visualization and interaction. Conversely, using computer graphics to immerse humans into mathematical theories. 
