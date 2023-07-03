@@ -16,9 +16,7 @@ I am interested in combining mathematical theories with computer graphics for vi
 Additionally, I am also researching how to immerse humans into virtual soundscapes. This involves separating, analyzing, synthesizing, and propagating sound to enhance the immersive experience.
 
 I have also collaborated with Prof. [Yue Zhang](https://web.engr.oregonstate.edu/~zhangyue/index.html) and [ODOT](https://www.oregon.gov/odot/Pages/index.aspx) on designing rumble strips to contribute to reducing exterior noise using finite element modeling.
-Prior to joining Oregon State University, I worked with Prof. [Harry Qin](https://harry-qinjing.github.io/) at the Hong Kong Polytechnic University, where my research focused on visualizing medical dataset from ultrasound using rendering techniques.
-
-Among my past summers, I served as a mentor in [ASE](https://web.engr.oregonstate.edu/~zhenjint/), helping high school students take the leap and develop an interest in research.
+Prior to joining Oregon State University, I worked with Prof. [Harry Qin](https://harry-qinjing.github.io/) at the Hong Kong Polytechnic University, where my research focused on visualizing medical dataset from ultrasound using rendering techniques. Among my past summers, I served as a mentor in [ASE](https://web.engr.oregonstate.edu/~zhenjint/), helping high school students take the leap and develop an interest in research.
 
 Contact me
 ------
