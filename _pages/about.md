@@ -11,8 +11,8 @@ redirect_from:
 I am a final-year PhD student advised by Prof. [Eugene Zhang](https://web.engr.oregonstate.edu/~zhange/) in the Electrical Engineering & Computer Science Department at Oregon State University. I am also co-advised by Prof. [Yue Zhang](https://web.engr.oregonstate.edu/~zhangyue/index.html) when I am a junior PhD student. I hold a Bachelor's degree (honor) in Computer Science from Sichuan University.
 
 My work mainly focus on computer graphics and visualization:  
-1) Merging math theories (e.g., [Non-Euclidean geometries and Orbifolds](https://www.math.unl.edu/~jkettinger2/thurston.pdf)) and computer graphics.  
-2) Immersing humans into virtual soundscapes. This involves separating, synthesizing, propagating, and auralizing sound to enhance the immersive experience.  
+1) Explore math theories (e.g., [Non-Euclidean geometries and Orbifolds](https://www.math.unl.edu/~jkettinger2/thurston.pdf)) by computer graphics and visualization.  
+2) Immerse humans into virtual soundscapes. This involves separating, synthesizing, propagating, and auralizing sound to enhance the immersive experience.  
 3) Volume rendering.
 
 I have also worked for Prof. [Yue Zhang](https://web.engr.oregonstate.edu/~zhangyue/index.html) and [ODOT](https://www.oregon.gov/odot/Pages/index.aspx) on [designing rumble strips to contribute to reducing exterior noise using finite element modeling](https://rosap.ntl.bts.gov/view/dot/63289).
