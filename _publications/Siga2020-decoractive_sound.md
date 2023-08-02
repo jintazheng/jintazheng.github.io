@@ -9,7 +9,7 @@ official_url: ""
 arxiv_url: ""
 preview: "pubs/Siga2020/representative.jpg"
 teaser: "pubs/Siga2020/representative.jpg"
-teaser_caption: "."
+teaser_caption: ""
 bibtex: "@article{zheng2020real,
   title={Real-time rendering of decorative sound textures for soundscapes},
   author={Zheng, Jinta and Hung, Shih-Hsuan and Hiebel, Kyle and Zhang, Yue},
