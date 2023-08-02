@@ -1,12 +1,12 @@
 ---
 title: "Real-time rendering of decorative sound textures for soundscapes"
 venue: "SIGGRAPH Asia (ACM Transactions on Graphics)"
-award: ""
-authors: "Jinta Zheng, Shih-Hsuan Hung, Kyle Hiebel, Yue Zhang"
-permalink: "/publication/xx"
-preprint_url: ""
-official_url: "https://dl.acm.org/doi/pdf/10.1145/3414685.3417875"
-arxiv_url: ""
+<!-- award: "" -->
+authors: "<strong>Jinta Zheng</strong>, Shih-Hsuan Hung, Kyle Hiebel, Yue Zhang"
+permalink: "https://dl.acm.org/doi/pdf/10.1145/3414685.3417875"
+<!--preprint_url: ""
+<!--official_url: "https://dl.acm.org/doi/pdf/10.1145/3414685.3417875" -->
+<!--arxiv_url: "" -->
 preview: "pubs/Siga2020/representative.jpg"
 teaser: "pubs/Siga2020/representative.jpg"
 teaser_caption: "."
