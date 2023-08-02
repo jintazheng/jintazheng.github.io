@@ -1,8 +1,8 @@
 ---
-title: "FoVolNet: Fast Volume Rendering using Foveated Deep Neural Networks"
+title: "xxxxx"
 venue: "IEEE Visualization Conference (VIS)"
-award: "Best Paper Honorable Mentions"
-authors: "David Bauer, Qi Wu, and Kwan-Liu Ma"
+award: "xx"
+authors: "xxxa"
 permalink: "/publication/vis2022-fovonet"
 preprint_url: "https://drive.google.com/file/d/1-H7rtC_VH88oNp10kKSCacFE3IU2VCjj/view?usp=sharing"
 official_url: "https://doi.org/10.1109/TVCG.2022.3209498"
