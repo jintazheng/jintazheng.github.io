@@ -7,16 +7,7 @@ official_url: "https://dl.acm.org/doi/pdf/10.1145/3414685.3417875"
 preview: "pubs/Siga2020/representative.jpg"
 teaser: "pubs/Siga2020/representative.jpg"
 teaser_caption: "Fig. 1. Our method renders a decorative sound texture of a city street during a rainstorm. The images (top row) show the virtual scene from the listener’s perspective over an eight second time period. The plots (bottom row) show the corresponding color-coded waveform of the rendered decorative sound texture in the left and right ears. Raindrops hitting the road (blue) is the background texture, raindrops hitting the umbrella (dark green) is the first foreground sound, and birds chirping (light green) is the second foreground sound. All the foreground sounds and background textures were extracted from recordings at Font et al. [2013]. The intensity of the background texture increases throughout the eight seconds, as intended by the scene designer. Additionally, the event frequency of the foreground sounds increases over time, which is also controlled by our methods. This scene is built in CARLA [Dosovitskiy et al. 2017]."
-bibtex: "@article{zheng2020real,
-  title={Real-time rendering of decorative sound textures for soundscapes},
-  author={Zheng, Jinta and Hung, Shih-Hsuan and Hiebel, Kyle and Zhang, Yue},
-  journal={ACM Transactions on Graphics (TOG)},
-  volume={39},
-  number={6},
-  pages={1--12},
-  year={2020},
-  publisher={ACM New York, NY, USA}
-}"
+bibtex: "@article{zheng2020real,\n title={Real-time rendering of decorative sound textures for soundscapes},\n  author={Zheng, Jinta and Hung, Shih-Hsuan and Hiebel, Kyle and Zhang, Yue},\n  journal={ACM Transactions on Graphics (TOG)},\n  volume={39},\n  number={6},\n  pages={1--12},\n  year={2020},\n  publisher={ACM New York, NY, USA}}"
 permalink: "/publication/Siga2020-decoractive_sound"
 code: "https://github.com/jintazheng/jintazheng.github.io"
 date: 2020-11-27
