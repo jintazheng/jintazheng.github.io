@@ -9,11 +9,8 @@ main:
   # - title: "Blog Posts"
   #   url: /year-archive/
     
-  - title: "CV"
-    url: /assets/OriginalENG-Academic.pdf
-
-  - title: "简历"
-    url: /assets/OriginalCHN-Academic.pdf
+  #- title: "CV"
+  #  url: /assets/
 
   # - title: "Talks"
   #   url: /talks/    
