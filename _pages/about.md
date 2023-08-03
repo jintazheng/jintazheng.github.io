@@ -11,7 +11,7 @@ redirect_from:
 I am a final-year PhD student advised by Prof. [Eugene Zhang](https://web.engr.oregonstate.edu/~zhange/) in the Electrical Engineering & Computer Science Department at Oregon State University. I hold a Bachelor's degree (honor) in Computer Science from Sichuan University.
 
 My work mainly focus on computer graphics and visualization:  
-1) Explore math theories (e.g., [Non-Euclidean geometries and Orbifolds](https://www.math.unl.edu/~jkettinger2/thurston.pdf)) by computer graphics and visualization.  
+1) Explore math theories (e.g., [Non-Euclidean geometries and Orbifolds](https://www.math.unl.edu/~jkettinger2/thurston.pdf)).  
 2) Immerse humans into virtual soundscapes.  
 3) Volume rendering.
 
