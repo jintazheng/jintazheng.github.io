@@ -15,7 +15,7 @@ My work mainly focus on computer graphics and visualization:
 2) Immerse humans into virtual soundscapes.  
 3) Volume rendering.
 
-I have also worked with Prof. [Yue Zhang](https://web.engr.oregonstate.edu/~zhangyue/index.html) (co-advisor during the junior years) for [ODOT](https://www.oregon.gov/odot/Pages/index.aspx) on [designing rumble strips](https://rosap.ntl.bts.gov/view/dot/63289).
+I have also worked with Prof. [Yue Zhang](https://web.engr.oregonstate.edu/~zhangyue/index.html) (co-advisor during the junior years) for [ODOT](https://www.oregon.gov/odot/Pages/index.aspx) on [designing rumble strips](https://trid.trb.org/view/2004798).
 Among my past summers, I served as a mentor in [ASE](https://web.engr.oregonstate.edu/~zhenjint/).
 Prior to joining Oregon State University, I worked with Prof. [Harry Qin](https://harry-qinjing.github.io/) at the Hong Kong Polytechnic University, focusing on volume rendering techniques. 
 
