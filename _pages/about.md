@@ -10,7 +10,7 @@ redirect_from:
 
 I am a final-year PhD student advised by Prof. [Eugene Zhang](https://web.engr.oregonstate.edu/~zhange/) in the EECS at Oregon State University. I hold a Bachelor's degree (honor) in Computer Science from Sichuan University.
 
-I have been working in different areas from scratch:  
+I have been working in those areas from scratch:  
 1) Non-Euclidean geometries and Orbifolds.  
 2) Immerse humans into virtual soundscapes.  
 3) Volume rendering.
