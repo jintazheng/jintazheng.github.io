@@ -15,7 +15,7 @@ I have been working in those areas:
 2) Immerse humans into virtual soundscapes.  
 3) Volume rendering.
 
-I also worked for Prof. [Yue Zhang](https://web.engr.oregonstate.edu/~zhangyue/index.html) and [ODOT](https://www.oregon.gov/odot/Pages/index.aspx) on [designing rumble strips](https://trid.trb.org/view/2004798) (funding project).
+I also worked for Prof. [Yue Zhang](https://web.engr.oregonstate.edu/~zhangyue/index.html) and [ODOT](https://www.oregon.gov/odot/Pages/index.aspx) on [designing rumble strips](https://trid.trb.org/view/2004798) (Co-Advisor at the Junior Years).
 Among my past summers, I served as a mentor in [ASE](https://web.engr.oregonstate.edu/~zhenjint/).
 Before PhD Life, I worked with Prof. [Harry Qin](https://research.polyu.edu.hk/en/persons/jing-qin) on volume rendering. 
 
