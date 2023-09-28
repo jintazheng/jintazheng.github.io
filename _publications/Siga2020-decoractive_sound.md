@@ -1,6 +1,6 @@
 ---
 title: "Real-time Rendering of Decorative Sound Textures for Soundscapes"
-venue: "SIGGRAPH Asia (ACM Transactions on Graphics)"
+venue: "ACM Transactions on Graphics(SIGGRAPH Asia)"
 authors: "Jinta Zheng, Shih-Hsuan Hung, Kyle Hiebel, Yue Zhang"
 abstract: "Audio recordings contain rich information about sound sources and their properties such as the location, loudness, and frequency of events. One prevalent component in sound recordings is the sound texture, which contains a massive number of events. In such a texture, there can be some distinct and repeated sounds that we term as a foreground sound. Birds chirping in the wind is one such decorative sound texture with the chirping as a foreground sound and the wind as a background texture. To render these decorative sound textures in real-time and with high quality, we create twolayer Markov Models to enable smooth transitions from sound grain to sound grain and propose a hierarchical scheme to generate Head-Related Transfer Function filters for localization cues of sounds represented as area/volume sources. Moreover, during the synthesis stage, we provide control over the."
 preprint_url: "https://dl.acm.org/doi/pdf/10.1145/3414685.3417875"
