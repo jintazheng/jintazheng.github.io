@@ -1,7 +1,7 @@
 ---
 title: "Local Detail Enhancement for Volume Rendering under Global Illumination"
 venue: "Pacific Graphics"
-authors: "Jinta Zheng, Tianjin Zhang, Jing Qin"
+authors: "Jinta Zheng, Tianjin Zhang, Jing Qin*"
 preprint_url: "https://diglib.eg.org/bitstream/handle/10.2312/pg20161334/045-050.pdf"
 official_url: "http://diglib.eg.org/handle/10.2312/pg20161334"
 preview: "pubs/pg2016.png"
