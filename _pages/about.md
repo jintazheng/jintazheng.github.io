@@ -19,7 +19,7 @@ I also worked for Prof. [Yue Zhang](https://web.engr.oregonstate.edu/~zhangyue/i
 Among my past summers, I served as a mentor in [ASE](https://web.engr.oregonstate.edu/~zhenjint/).  
 Before PhD Life, I worked with Prof. [Harry Qin](https://research.polyu.edu.hk/en/persons/jing-qin) on volume rendering. 
 
-<span style="color: red;">I am going to defend my degree in December. If you have any positions (industry/academic) that might be suitable, please email me.</span>
+<span style="color: red;">I am on the job market. If you have any positions (industry/academic) that might be suitable, please email me.</span>
 
 
 Contact me
