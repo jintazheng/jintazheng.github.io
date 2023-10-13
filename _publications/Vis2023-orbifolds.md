@@ -1,6 +1,6 @@
 ---
 title: "Interactive Design and Optics-Based Visualization of Arbitrary Non-Euclidean Kaleidoscopic Orbifolds"
-venue: "Accepted by IEEE Transactions on Visualization and Computer Graphics (IEEE VIS)(to appear)"
+venue: "IEEE Transactions on Visualization and Computer Graphics (IEEE VIS)(to appear)"
 authors: "Jinta Zheng, Eugene Zhang*, Yue Zhang"
 preprint_url: "https://arxiv.org/pdf/2309.01853.pdf"
 preview: "pubs/vis2023buddha.png"
