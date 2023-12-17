@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a final-year PhD student advised by Prof. [Eugene Zhang](https://web.engr.oregonstate.edu/~zhange/) in the EECS at Oregon State University. I hold a Bachelor's degree (honor) in Computer Science from Sichuan University.
+I successfully defended my Ph.D. degree in EECS at Oregon State University. My advisor is Prof. [Eugene Zhang](https://web.engr.oregonstate.edu/~zhange/). I hold a Bachelor's degree (honor) in Computer Science from Sichuan University.
 
 My current research explores:   
 1) Non-Euclidean geometries and Orbifolds.  
