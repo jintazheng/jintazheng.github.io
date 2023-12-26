@@ -11,9 +11,9 @@ redirect_from:
 I successfully defended my Ph.D. degree in EECS at Oregon State University. My advisor is Prof. [Eugene Zhang](https://web.engr.oregonstate.edu/~zhange/). I hold a Bachelor's degree (honor) in Computer Science from Sichuan University.
 
 My current research explores:   
-1) Non-Euclidean geometries and Orbifolds.  
+1) Visualizing Non-Euclidean geometries and Orbifolds.  
 2) Immersing humans into virtual soundscapes.  
-3) Volume rendering.
+3) Rendering volumetric data.
 
 I also worked with Prof. [Yue Zhang](https://web.engr.oregonstate.edu/~zhangyue/index.html) (co-advisor at the junior years) on [designing rumble strips](https://trid.trb.org/view/2004798) funded by [ODOT](https://www.oregon.gov/odot/Pages/index.aspx).  
 Among my past summers, I served as a mentor in [ASE](https://web.engr.oregonstate.edu/~zhenjint/).  
