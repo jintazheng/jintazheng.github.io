@@ -8,16 +8,18 @@ redirect_from:
   - /about.html
 ---
 
-I successfully defended my Ph.D. degree in EECS at Oregon State University. My advisor is Prof. [Eugene Zhang](https://web.engr.oregonstate.edu/~zhange/). I hold a Bachelor's degree (honor) in Computer Science from Sichuan University.
+Ph.D. degree in Computer Science from Oregon State University. Advisor: Prof. [Eugene Zhang](https://web.engr.oregonstate.edu/~zhange/).  
+B.E. degree in Computer Science from Sichuan University.  
 
-My current research explores:   
+Research areas (Computer Graphics and Visualization):   
 1) Visualizing Non-Euclidean geometries and Orbifolds.  
 2) Immersing humans into virtual soundscapes.  
 3) Rendering volumetric data.
 
-I also worked with Prof. [Yue Zhang](https://web.engr.oregonstate.edu/~zhangyue/index.html) (co-advisor at the junior years) on [designing rumble strips](https://trid.trb.org/view/2004798) funded by [ODOT](https://www.oregon.gov/odot/Pages/index.aspx).  
-Among my past summers, I served as a mentor in [ASE](https://web.engr.oregonstate.edu/~zhenjint/).  
-Before PhD Life, I worked with Prof. [Harry Qin](https://research.polyu.edu.hk/en/persons/jing-qin) on volume rendering. 
+Other experience: 
+1) [Designing rumble strips](https://trid.trb.org/view/2004798) with Prof. [Yue Zhang](https://web.engr.oregonstate.edu/~zhangyue/index.html).  
+2) Mentor in [ASE](https://web.engr.oregonstate.edu/~zhenjint/).  
+3) Volume rendering with Prof. [Harry Qin](https://research.polyu.edu.hk/en/persons/jing-qin).
 
 <span style="color: red;">I am on the job market. If you have any positions (industry/academic) that might be suitable, please email me.</span>
 
