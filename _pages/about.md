@@ -16,7 +16,7 @@ Research areas (Computer Graphics and Visualization):
 2) Immersing humans into virtual soundscapes.  
 3) Rendering volumetric data.
 
-Other experience: 
+Other experience:   
 1) [Designing rumble strips](https://trid.trb.org/view/2004798) with Prof. [Yue Zhang](https://web.engr.oregonstate.edu/~zhangyue/index.html).  
 2) Mentor in [ASE](https://web.engr.oregonstate.edu/~zhenjint/).  
 3) Volume rendering with Prof. [Harry Qin](https://research.polyu.edu.hk/en/persons/jing-qin).
