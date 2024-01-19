@@ -19,7 +19,7 @@ Research areas (Computer graphics and visualization):
 
 Other experiences:   
 1) [Designing rumble strips](https://trid.trb.org/view/2004798) with Prof. [Yue Zhang](https://web.engr.oregonstate.edu/~zhangyue/index.html).  
-2) Mentor in [ASE](https://web.engr.oregonstate.edu/~zhenjint/).  
+2) Summer mentor in [ASE](https://web.engr.oregonstate.edu/~zhenjint/).  
 3) Volume rendering with Prof. [Harry Qin](https://research.polyu.edu.hk/en/persons/jing-qin).
 
 <span style="color: red;">I am on the job market. If you have any positions (industry/academic) that might be suitable, please email me.</span>
