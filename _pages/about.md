@@ -9,7 +9,8 @@ redirect_from:
 ---
 
 Ph.D. degree in Computer Science from Oregon State University.   
-   Advisor: Prof. [Eugene Zhang](https://web.engr.oregonstate.edu/~zhange/).  
+Dissertation: [Interactive Design and Visualization of Arbitrary Two-dimensional Non-Euclidean Kaleidoscopic Orbifolds](https://jintazheng.github.io/publications/).    
+Advisor: Prof. [Eugene Zhang](https://web.engr.oregonstate.edu/~zhange/).  
 B.E.  degree in Computer Science from Sichuan University.  
 
 Research areas (Computer graphics and visualization):   
