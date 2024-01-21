@@ -21,4 +21,4 @@ The paper is also accessible in [NASA/ADS](https://ui.adsabs.harvard.edu/abs/202
 
 ### Pool Ball Game
 
-<iframe height="560" src="https://jintazheng.github.io/PoolBallGame/index.html" width="622"></iframe>
+<iframe height="600" src="https://jintazheng.github.io/PoolBallGame/index.html" width="600"></iframe>
