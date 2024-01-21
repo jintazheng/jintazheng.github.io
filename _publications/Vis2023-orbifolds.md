@@ -18,3 +18,7 @@ The paper is also accessible in [NASA/ADS](https://ui.adsabs.harvard.edu/abs/202
 ### Short Video
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/APfllm0R3ak?si=VP6usBW0vAenK6I0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+### Pool Ball Game
+
+<iframe height="560" src="PoolBallGame/index" width="622"></iframe>
