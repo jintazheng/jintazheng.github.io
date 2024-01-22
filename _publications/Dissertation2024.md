@@ -31,6 +31,6 @@ Hierarchical structures that complement the geometric characteristics of the non
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/bzG6rsTTaSY?si=ggJFXA9aA8kscqEO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-### Video for making a Euclidean kaleidoscope
+### Video for making an Euclidean kaleidoscope
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/yShrIOj34r0?si=bPxTrxmigA7CY4wF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
