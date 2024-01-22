@@ -11,10 +11,10 @@ date: 2016-10-11
 collection: "publications"
 ---
 
-### Short Video
+### Short video
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/twmVqVWMDEA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-### Short Video
+### Short video
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/OPemdiy9mNE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

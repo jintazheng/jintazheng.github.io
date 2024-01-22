@@ -15,10 +15,10 @@ date: 2020-11-27
 collection: "publications"
 ---
 
-### Fast-forward Video
+### Fast-forward video
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/9FOURP3NocQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-### Short Video
+### Short video
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/2SwOGqGEPSQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

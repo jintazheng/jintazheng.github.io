@@ -19,7 +19,7 @@ An adapted rendering that takes into account the geodesics in non-Euclidean spac
 A mirror-based metaphor for orbifold visualization.    
 Hierarchical structures that complement the geometric characteristics of the non-Euclidean spaces.    
 
-### Video for Presentation (slides)
+### Video for presentation (slides)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/USVgh4NENbo?si=7Yga43mYeY4zWb-q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 

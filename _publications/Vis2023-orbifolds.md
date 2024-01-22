@@ -11,14 +11,14 @@ collection: "publications"
 ---
 The paper is also accessible in [NASA/ADS](https://ui.adsabs.harvard.edu/abs/2023arXiv230901853Z/abstract) and [NIH](https://pubmed.ncbi.nlm.nih.gov/37874711/). 
 
-### Fast-forward Video
+### Fast-forward video
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/6wDIiB2IdR0?si=zw-bUf3N2-L41vNI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-### Short Video
+### Short video
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/APfllm0R3ak?si=VP6usBW0vAenK6I0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-### Pool Ball Game
+### Pool ball game (try it!)
 
 <iframe height="720" src="https://jintazheng.github.io/PoolBallGame/index.html" width="800"></iframe>
