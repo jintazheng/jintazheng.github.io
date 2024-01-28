@@ -25,11 +25,11 @@ Hierarchical structures that complement the geometric characteristics of the non
 
 ### Video for translating demos
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/k9en58m8NrI?si=LMg7EJhQUEex1nbJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eWOfn9Y2u7c?si=Fh_I_2RH_vgYo6Co" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### Video for rotating demos
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/bzG6rsTTaSY?si=ggJFXA9aA8kscqEO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mLscxSEncZ8?si=KDSFRThntuskphtk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### Video for making an Euclidean kaleidoscope
 
