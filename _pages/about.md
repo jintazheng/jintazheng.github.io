@@ -18,7 +18,7 @@ Research areas (Computer graphics and visualization):
 3) Rendering volumetric data.
 
 Other experiences:   
-1) [Designing rumble strips](https://trid.trb.org/view/2004798) with Prof. [Yue Zhang](https://web.engr.oregonstate.edu/~zhangyue/index.html).  
+1) [Designing rumble strips](https://trid.trb.org/view/2004798) with Prof. [Yue Zhang](https://web.engr.oregonstate.edu/~zhangyue/index.html) and [ODOT](https://www.oregon.gov/odot/pages/index.aspx).  
 2) Summer mentor in [ASE](https://web.engr.oregonstate.edu/~zhenjint/).  
 3) Volume rendering with Prof. [Harry Qin](https://research.polyu.edu.hk/en/persons/jing-qin).
 
