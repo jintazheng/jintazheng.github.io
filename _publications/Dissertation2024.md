@@ -28,10 +28,6 @@ Hierarchical structures that complement the geometric characteristics of the non
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/USVgh4NENbo?si=NlgI2VJC55L5tKxD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-### Slides
-
-<iframe src="https://onedrive.live.com/embed?resid=B7B84E763FD00019%213282&amp;authkey=!AOx-Zv-dwFw28ys&amp;em=2&amp;wdAr=1.7777777777777777" width="560px" height="315px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
-
 ### Video for translating demos
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/eWOfn9Y2u7c?si=Fh_I_2RH_vgYo6Co" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
