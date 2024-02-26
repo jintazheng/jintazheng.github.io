@@ -9,7 +9,9 @@ teaser: "pubs/vis2023buddha.png"
 date: 2023-7-15
 collection: "publications"
 ---
-The paper is also accessible in [NASA/ADS](https://ui.adsabs.harvard.edu/abs/2023arXiv230901853Z/abstract) and [NIH](https://pubmed.ncbi.nlm.nih.gov/37874711/). 
+The paper is also accessible in [NASA/ADS](https://ui.adsabs.harvard.edu/abs/2023arXiv230901853Z/abstract) and [NIH](https://pubmed.ncbi.nlm.nih.gov/37874711/).     
+
+[Appendix](https://web.engr.oregonstate.edu/~zhange/images/orbifold_vis_appendix.pdf)
 
 ### Fast-forward video
 
