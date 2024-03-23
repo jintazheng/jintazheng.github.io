@@ -8,19 +8,23 @@ redirect_from:
   - /about.html
 ---
 
-I am a final-year PhD student advised by Prof. [Eugene Zhang](https://web.engr.oregonstate.edu/~zhange/) in the EECS at Oregon State University. I hold a Bachelor's degree (honor) in Computer Science from Sichuan University.
+Ph.D. degree in Computer Science from Oregon State University.   
+Dissertation: [Interactive Design and Visualization of Arbitrary Two-dimensional Non-Euclidean Kaleidoscopic Orbifolds](https://jintazheng.github.io/publications/). Advisor: Prof. [Eugene Zhang](https://web.engr.oregonstate.edu/~zhange/).  
+B.E.  degree in Computer Science from Sichuan University.  
 
-I have been working in those areas from theory to application:   
-1) Non-Euclidean geometries and Orbifolds.  
+Research areas (Computer graphics and visualization):   
+1) Visualizing non-Euclidean geometries and orbifolds.  
 2) Immersing humans into virtual soundscapes.  
-3) Volume rendering.
+3) Rendering volumetric data.
 
-I also worked for Prof. [Yue Zhang](https://web.engr.oregonstate.edu/~zhangyue/index.html) (co-advisor at the junior years) on [designing rumble strips](https://trid.trb.org/view/2004798) funded by [ODOT](https://www.oregon.gov/odot/Pages/index.aspx).  
-Among my past summers, I served as a mentor in [ASE](https://web.engr.oregonstate.edu/~zhenjint/).  
-Before PhD Life, I worked with Prof. [Harry Qin](https://research.polyu.edu.hk/en/persons/jing-qin) on volume rendering. 
+Other experiences:   
+1) [Designing rumble strips](https://trid.trb.org/view/2004798) with Prof. [Yue Zhang](https://web.engr.oregonstate.edu/~zhangyue/index.html) and [ODOT](https://www.oregon.gov/odot/pages/index.aspx).  
+2) Summer mentor in [ASE](https://web.engr.oregonstate.edu/~zhenjint/).  
+3) Volume rendering with Prof. [Harry Qin](https://research.polyu.edu.hk/en/persons/jing-qin).
 
+<!--
 <span style="color: red;">I am on the job market. If you have any positions (industry/academic) that might be suitable, please email me.</span>
-
+-->
 
 Contact me
 ------
