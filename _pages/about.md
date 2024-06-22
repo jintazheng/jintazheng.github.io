@@ -7,7 +7,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-
+XR Engineer Qualcomm Technologies Inc.     
 Ph.D. degree in Computer Science from Oregon State University.   
 B.E.  degree in Computer Science from Sichuan University.  
 
@@ -27,4 +27,4 @@ Other experiences:
 
 Contact me
 ------
-Email: zhenjint (at) oregonstate (dot) com
+Email: zhengjinta (at) outlook (dot) com
