@@ -1,0 +1,94 @@
+{% include base_path %}
+
+{% if post.preview %}
+  {% capture preview %}{{ post.preview }}{% endcapture %}
+{% else %}
+  {% assign preview = site.teaser %}
+{% endif %}
+
+<!-- add default prefix -->
+{% if preview contains "://" %}
+  {% assign preview = preview %}
+{% else %}
+  {% assign preview = preview | prepend: "/images/" | prepend: base_path %}
+{% endif %}
+
+<!-- not sure what is this for now -->
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
+<div class="{{ include.type | default: 'list' }}__item">
+  <article class="archive__item mb-2" itemscope itemtype="http://schema.org/CreativeWork">
+
+    <div class="row col-12">
+
+      <div class=".archive__item-teaser col-6 col-md-2 float-md-left">
+        <img src="{{ preview }}" alt="">
+      </div>
+
+      <div class="col-12 col-md-10 text-md-left">
+
+        <h6 class="archive__item-title text-decoration-none" itemprop="headline">
+          {{ title }}
+        </h6>
+
+        <p class="archive__item-content fs-6">
+          {{ post.authors }}
+          <br/>
+          <i>{{ post.venue }}</i>, 
+          {% if post.award %}
+            <b style="color:coral">{{ post.award }}</b>,
+          {% endif %}
+          {{ post.date | default: "1900-01-01" | date: "%Y" }} 
+        </p>
+
+        {% if post.url %}
+          <a class="mr-2 text-decoration-none" href="{{ base_path }}{{ post.url }}">
+            <i class="far fa-file-alt" aria-hidden="true"></i> Project Page &nbsp;
+          </a>
+        {% endif %}
+
+        {% if post.preprint_url %}
+          <a class="mr-2 text-decoration-none" href="{{ post.preprint_url }}">
+            <i class="far fa-file-pdf" aria-hidden="true"></i> PDF &nbsp;
+          </a>
+        {% endif %}
+
+        {% if post.arxiv_url %}
+          <a class="mr-2 text-decoration-none" href="{{ post.arxiv_url }}">
+            <i class="fas fa-external-link-alt" aria-hidden="true"></i> ArXiv &nbsp;
+          </a>
+        {% endif %}
+
+        {% if post.official_url %}
+          <a class="mr-2 text-decoration-none" href="{{ post.official_url }}">
+            <i class="fas fa-external-link-alt" aria-hidden="true"></i> Publisher &nbsp;
+          </a>
+        {% endif %}
+
+        {% if post.code %}
+          <a class="mr-2 text-decoration-none" href="{{ post.code }}">
+            <i class="fa-brands fa-github" aria-hidden="true"></i> Code &nbsp;
+          </a>
+        {% endif %}
+
+        <!-- {% if post.bibtex %}
+          <a class="mr-2 text-decoration-none" href="javascript:void(0);" data-clipboard-text="{{ post.bibtex }}"
+            data-toggle="popover"
+            data-content="Copied!" 
+            data-delay="{&quot;show&quot;:0,&quot;hide&quot;:1000}" 
+            data-trigger="focus" data-original-title title
+          >
+            <i class="fas fa-quote-left" aria-hidden="true"></i> Copy Bibtex &nbsp;
+          </a>
+        {% endif %} -->
+
+      </div>  
+
+    </div>
+
+  </article>
+</div>
