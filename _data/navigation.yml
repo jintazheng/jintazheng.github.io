@@ -9,8 +9,8 @@ main:
   # - title: "Blog Posts"
   #   url: /year-archive/
     
-  #- title: "CV"
-  #  url: /assets/RESUME_JINTA_ZHENG.pdf
+  - title: "CV"
+    url: /assets/RESUME_JINTA_ZHENG.pdf
 
   # - title: "Talks"
   #   url: /talks/    
