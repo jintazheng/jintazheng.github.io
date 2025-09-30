@@ -2,7 +2,7 @@
 title: "Interactive Design and Visualization of Arbitrary Two-dimensional Non-Euclidean Kaleidoscopic Orbifolds"
 venue: "Dissertation, Oregon State University"
 authors: "Jinta Zheng"
-preprint_url: "https://ir.library.oregonstate.edu/concern/graduate_thesis_or_dissertations/5425kk55c"
+preprint_url: "/assets/Interactive_Design_and_Visualization_of_Arbitrary_Two_dimensional_Non_Euclidean_Kaleidoscopic_Orbifolds.pdf"
 official_url: "https://ir.library.oregonstate.edu/concern/graduate_thesis_or_dissertations/5425kk55c"
 preview: "pubs/vis2023.png"
 teaser: "pubs/vis2023.png"
