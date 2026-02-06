@@ -7,7 +7,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-XR Engineer Qualcomm Technologies Inc.     
+XR R&D Qualcomm Technologies Inc.     
 Ph.D. degree in Computer Science from Oregon State University.   
 B.E.  degree in Computer Science from Sichuan University.  
 
